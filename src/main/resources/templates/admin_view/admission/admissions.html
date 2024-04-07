@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Admissions</title>
+    <link rel="stylesheet" type="text/css" href="/css/table_page_style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body style="background-image: url('https://wallpapers.com/images/hd/nursing-od8jkr1zhiuniwfp.jpg');">
+<div class="sidenav">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU"
+         alt="Profile Image">
+    <a class="h4" style="margin-top: 10%;" th:href="@{/index_hospitalStaff}">Home Page</a>
+    <a class="h4" th:href="@{/admissions/new}">Add New Admission</a>
+</div>
+<div class="upperBox"></div>
+<div class="backgroundBox"></div>
+<div class="main">
+    <div class="container-fluid text-center">
+        <div class="title-box">
+            <h2 style="color: #5f93b7">Admissions</h2> <!-- Add title "Doctors" -->
+        </div>
+
+        <div>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Patient ID</th>
+                    <th>Doctor ID</th>
+                    <th>Enrollment Date</th>
+                    <th>Discharging Date</th>
+                    <th>Admission Room</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <th:block th:each="admission : ${listAdmissions}">
+                    <tr>
+                        <td>[[${admission.id}]]</td>
+                        <td>[[${admission.patient.id}]]</td>
+                        <td>[[${admission.doctor.id}]]</td>
+                        <td>[[${admission.enrollmentDate}]]</td>
+                        <td>[[${admission.dischargingDate}]]</td>
+                        <td>[[${admission.admissionRoom.id}]]</td>
+                        <td>
+                            <a class="h4 mr-3" th:href="@{'/admissions/edit/' + ${admission.id}}">Edit</a>
+                            <a class="h4" th:href="@{'/admissions/delete/' + ${admission.id}}">Delete</a>
+                        </td>
+                    </tr>
+                </th:block>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

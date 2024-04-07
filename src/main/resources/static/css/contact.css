@@ -1,0 +1,179 @@
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.sidenav {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #002e4d;
+    overflow-x: hidden;
+    padding-top: 2.5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenav img {
+    width: 60%; /* Adjust the width of the image */
+    border-radius: 50%;
+    margin-bottom: 10%;
+    margin-left: 20%;
+}
+
+.sidenav a {
+    display: block;
+    padding: 10%;
+    text-decoration: none;
+    color: #ccc;
+    background-color: #002e4d;
+    border: 1px solid #002e4d;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+
+    font-size: 18px;
+}
+
+/* Hover effect for navigation links */
+.sidenav a:hover {
+    background-color: rgb(126, 177, 200);
+}
+
+nav {
+    background-color: white;
+    overflow: hidden;
+    width: 65%; /* Set width for navigation */
+    padding-left: 5%;
+
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: #0066cc;
+    text-align: center;
+    padding: 2.5% 2.5%;
+    text-decoration: none;
+    font-size: 16.5px;
+}
+
+nav a:hover {
+    background-color: #ccd9ff;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 16px;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+/* Contact details section */
+.contactDetailsBox {
+    max-width: 1500px;
+    position: relative;
+    margin-left: 20%; /* Same as the width of the sidenav */
+}
+
+.contactDetailsBox img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover; /* Ensure the image covers the entire container */
+    position: relative;
+}
+
+.contactBoxOverlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: center; /* Center the text */
+}
+
+.contactBoxOverlay h2 {
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-size: 36px;
+    margin-bottom: 0;
+}
+
+/* Google Map iframe */
+.google-map {
+    width: 35%; /* Adjust the width of the map */
+    height: 490px; /* Adjust the height of the map */
+    margin-left: 22%; /* Center the map horizontally */
+}
+/* Contact Form Styles */
+.contactForm {
+    position: absolute;
+    top: 126%;
+    left: 60%; /* Adjust the left position as needed */
+    transform: translate(-50%, -50%);
+    width: 35%;
+    padding: 20px;
+    background-color: rgba(154, 179, 229,0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif; /* Change the font family */
+    color: darkslateblue;
+}
+
+.contactForm h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+.btn-primary {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #032b45;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: rgb(126, 177, 200);
+}

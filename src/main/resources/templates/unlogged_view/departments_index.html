@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Departments</title>
+    <link rel="stylesheet" type="text/css" href="/css/departments_index.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body>
+<div class="sidenav">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU"
+         alt="Profile Image">
+    <a th:href="@{/}">About Us</a>
+    <a th:href="@{/doctors_index}">Doctors</a>
+    <a th:href="@{/departments_index}">Departments</a>
+    <a th:href="@{/facilities_index}">Facilities</a>
+    <a th:href="@{/contact}">Contact</a>
+</div>
+<div class="slideshow-container">
+    <div class="mySlides">
+        <img src="https://thenursespeak.com/wp-content/uploads/2016/09/happy-patient.jpg" style="width:100%;">
+        <div class="text-container">
+            <div class="text">At our hospital, we prioritize your well-being. From state-of-the-art medical facilities to a dedicated team of healthcare professionals, we are committed to providing personalized care that puts your health at the forefront
+            </div>
+        </div>
+    </div>
+
+    <div class="mySlides">
+        <img src="https://media.premiumtimesng.com/wp-content/files/2020/12/Medical-Devices-1024x684-1.jpeg" style="width:100%;">
+        <div class="text-container">
+            <div class="text">Embrace the future of healthcare with us. Our hospital is at the forefront of medical innovation, integrating advanced technologies and cutting-edge treatments to ensure you receive the best possible care. Your health is our inspiration for a healthier tomorrow.
+            </div>
+        </div>
+    </div>
+
+    <div class="mySlides">
+        <img src="https://www.verywellhealth.com/thmb/ud6VuOFXTsL46kuiNYYyAsD5PvI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/doctors-using-computer-together-in-hospital-187137137-57d060a85f9b5829f411cdab.jpg" style="width:100%;">
+        <div class="text-container">
+            <div class="text">Experience the difference of compassionate care backed by exceptional medical expertise. Our team of skilled doctors and staff is dedicated to delivering the highest standards of healthcare, ensuring you feel supported and well-informed throughout your journey to recovery
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            slides[i].classList.remove("fadeOut");
+        }
+
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(() => {
+            slides[slideIndex - 1].classList.add("fadeOut");
+        }, 5000); // Start fade out after 5 seconds (adjust if necessary)
+
+        updateText();
+
+        setTimeout(showSlides, 7000); // Change slide every 9 seconds (total 7 seconds per slide with fade)
+    }
+
+    function updateText() {
+        let text = "Default Text";
+
+        switch (slideIndex) {
+            case 1:
+                text = "At our hospital, we prioritize your well-being. From state-of-the-art medical facilities to a dedicated team of healthcare professionals, we are committed to providing personalized care that puts your health at the forefront.";
+                break;
+            case 2:
+                text = "Embrace the future of healthcare with us. Our hospital is at the forefront of medical innovation, integrating advanced technologies and cutting-edge treatments to ensure you receive the best possible care. Your health is our inspiration for a healthier tomorrow.";
+                break;
+            case 3:
+                text = "Experience the difference of compassionate care backed by exceptional medical expertise. Our team of skilled doctors and staff is dedicated to delivering the highest standards of healthcare, ensuring you feel supported and well-informed throughout your journey to recovery";
+                break;
+        }
+
+        document.querySelector('.text').innerText = text;
+    }
+</script>
+
+<div class="w3-row-padding" style = "margin-left: 24%; margin-top: 20%">
+    <div class="w3-col" style="margin-bottom: 20px">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://static.vecteezy.com/system/resources/previews/002/553/256/original/heartbeat-cardiology-medical-and-health-care-line-style-icon-free-vector.jpg" alt="Department 4" style="width:100%">
+            <div class="doctor-name">
+                <p>Cardiology</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="w3-col" style="margin-bottom: 20px">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://static.vecteezy.com/system/resources/previews/010/752/414/original/neurology-icon-design-free-vector.jpg" alt="Department 5" style="width:100%">
+            <div class="doctor-name">
+                <p>Neurology</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="w3-col" style="margin-bottom: 20px">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://static.thenounproject.com/png/3981849-200.png" alt="Department 6" style="width:100%">
+            <div class="doctor-name">
+                <p>Obstetrics and Gynecology</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-col" style="margin-bottom: 20px;margin-top: 5%;margin-left: 1.6%">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://static.thenounproject.com/png/3627851-200.png" alt="Department 4" style="width:100%">
+            <div class="doctor-name">
+                <p>Emergency Medicine</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="w3-col" style="margin-bottom: 20px;margin-top: 5%;margin-left: 1.6%">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://cdn-icons-png.flaticon.com/512/6974/6974791.png" alt="Department 5" style="width:100%">
+            <div class="doctor-name">
+                <p>Oncology</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="w3-col" style="margin-bottom: 20px;margin-top: 5%;margin-left: 1.6%">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://cdn-icons-png.flaticon.com/512/6669/6669499.png" alt="Department 6" style="width:100%">
+            <div class="doctor-name">
+                <p>Gastroenterology</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

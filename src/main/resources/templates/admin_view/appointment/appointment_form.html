@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Appointment</title>
+    <link rel="stylesheet" type="text/css" href="/css/form_styling.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .form-container {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+            font-family: 'Open Sans', sans-serif;
+
+        }
+
+        /* Style for form labels */
+        label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Style for input fields */
+        /* Style for input fields */
+        input,
+        select {
+            font-family: 'Open Sans', sans-serif;
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgb(132, 163, 225);
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 20px;
+            outline: none; /* Remove default focus outline */
+        }
+
+        .button-primary {
+            background-color: rgb(92, 133, 214);
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .button-primary:hover {
+            background-color: rgb(132, 163, 225);
+        }
+
+        .button-secondary {
+            background-color: #6c757d;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .button-secondary:hover {
+            background-color: #495057;
+        }
+
+        /* Center the buttons */
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="overlay"></div> <!-- Semi-transparent black overlay -->
+<div class="main">
+    <div class="container-fluid">
+        <h2>New Appointment</h2>
+
+        <form class="form-container" th:action="@{/appointments/save}" method="post" th:object="${appointment}"
+              style="max-width: 65%; margin: 3% auto;">
+            <input type="hidden" th:field="*{id}">
+            <div class="border border-secondary rounded p-3">
+                <!-- Patient selection -->
+                <!-- Patient selection -->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Patient:</label>
+                    <div class="col-sm-8">
+                        <select th:field="*{patient}" style="width: 90%; height: 40px;" class="form-control" required>
+                            <th:block th:each="pat:${patients}">
+                                <option th:text="${pat.id}" th:value="${pat.id}"></option>
+                            </th:block>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Doctor selection -->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Doctor:</label>
+                    <div class="col-sm-8">
+                        <select th:field="*{doctor}" style="width: 90%; height: 40px;" class="form-control" required>
+                            <th:block th:each="doc:${doctors}">
+                                <option th:text="${doc.id}" th:value="${doc.id}"></option>
+                            </th:block>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Examination Room selection -->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Admission Room:</label>
+                    <div class="col-sm-8">
+                        <select th:field="*{examinationRoom}" style="width: 90%; height: 40px;" class="form-control"
+                                required>
+                            <th:block th:each="room:${rooms}">
+                                <option th:text="${room.roomNumber}" th:value="${room.id}"></option>
+                            </th:block>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Date:</label>
+                    <div class="col-sm-8">
+                        <input type="datetime-local" style="width: 90%; height: 40px;" th:field="*{date}"
+                               class="form-control" required/>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn button-primary m-2">Save</button>
+                    <button type="button" class="btn button-secondary m-2" onclick="cancelForm()">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function cancelForm() {
+        window.location = "[[@{/appointments}]]";
+    }
+</script>
+</body>
+</html>

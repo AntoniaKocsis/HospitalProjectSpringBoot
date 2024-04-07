@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctors</title>
+    <link rel="stylesheet" type="text/css" href="/css/doctors_index.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        /* Add CSS styles for hiding the Meet The Doctors section by default */
+        #meet-the-doctors {
+            opacity: 0; /* Initially hidden */
+            transition: opacity 1s ease-in-out; /* Smooth transition effect */
+        }
+
+        /* Add CSS styles for hiding the paragraph by default */
+        #doctors-paragraph {
+            opacity: 0; /* Initially hidden */
+            transition: opacity 1s ease-in-out; /* Smooth transition effect */
+        }
+
+        .w3-card-4 {
+            opacity: 0; /* Initially hidden */
+            transition: opacity 1s ease-in-out; /* Smooth transition effect */
+        }
+    </style>
+</head>
+<body>
+<div class="sidenav">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU"
+         alt="Profile Image">
+    <a th:href="@{/}">About Us</a>
+    <a th:href="@{/doctors_index}">Doctors</a>
+    <a th:href="@{/departments_index}">Departments</a>
+    <a th:href="@{/facilities_index}">Facilities</a>
+    <a th:href="@{/contact}">Contact</a>
+</div>
+<div class="slideshow-container">
+    <div class="mySlides">
+        <img src="https://s3-eu-west-1.amazonaws.com/intercare-web-public/wysiwyg-uploads%2F1580196666465-doctor.jpg"
+             style="width:100%;">
+        <div class="text-container">
+            <div class="text">At Seattle~Grace Hospital, you can trust our skilled and qualified doctors who work
+                collaboratively to deliver comprehensive healthcare services, fostering a culture of excellence,
+                empathy, and innovation
+            </div>
+        </div>
+    </div>
+
+    <div class="mySlides">
+        <img src="https://assets.contenthub.wolterskluwer.com/api/public/content/cd5144c4f85a424994cf76203042bb59?v=171ae119"
+             style="width:100%;">
+        <div class="text-container">
+            <div class="text">Our dedicated team of experienced doctors is committed to providing compassionate and
+                personalized care to meet the unique needs of each patient.
+            </div>
+        </div>
+    </div>
+
+    <div class="mySlides">
+        <img src="https://dkhlegacytrust.org/wp-content/uploads/2020/06/images2409-5edd9779497a0.jpg"
+             style="width:100%;">
+        <div class="text-container">
+            <div class="text">Our doctors are leaders in their respective fields, staying at the forefront of medical
+                advancements to ensure the highest standard of treatment and outcomes for our patients.
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/slideshow.js"></script>
+<div id="meet-the-doctors"
+     style="margin-top: 20%; margin-left: 23%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <h2 style="font-size: 28px; color: black;">
+        <span style="border-bottom: 2px solid #007bff;">Meet The Doctors</span>
+    </h2>
+</div>
+<script src="/js/viewport_title_doctors.js"></script>
+<div id="doctors-paragraph" style="margin-top:0%;margin-left:24%;font-family: Georgia, serif;font-size:20px;">
+    <p style="padding: 5%">Seattle Grace Hospital prides itself on its distinguished team of doctors, renowned for their
+        expertise and compassionate care. Our doctors are leaders in their respective fields, offering a wealth of
+        experience and a commitment to excellence in every patient interaction. With a focus on patient well-being and
+        safety, our doctors prioritize personalized care, ensuring each patient receives the highest quality treatment
+        tailored to their unique needs. At Seattle Grace Hospital, patients can trust in the skill and dedication of our
+        doctors to provide exceptional healthcare and support throughout their journey to recovery.
+    </p>
+</div>
+<script src="/js/viewport_paragraph_doctors.js"></script>
+<div class="w3-row-padding" style="margin-left: 24%; margin-top: 0%">
+    <div class="w3-col" style="margin-bottom: 20px;margin-top: 3%;margin-left: 1.6%">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://media.istockphoto.com/id/1330046035/ro/fotografie/portretul-cu-capul-al-medicului-z%C3%A2mbitor-din-spital.jpg?s=612x612&w=0&k=20&c=CFCgAtIyYyXMTh10kLOv7cba5Ow7MSnFoXVHc0k2GV8="
+                 alt="Department 4" style="width:100%">
+            <div class="doctor-name">
+                <p>Dr. Sophia Rodriguez - Chief of Obstetrics and Gynecology</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="w3-col" style="margin-bottom: 20px;margin-top: 3%;margin-left: 1.6%">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://www.shutterstock.com/image-photo/portrait-smiling-young-caucasian-woman-600nw-1769848013.jpg"
+                 alt="Department 5" style="width:100%">
+            <div class="doctor-name">
+                <p>Dr. Nina Smith - Obstetrics and Gynecology</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="w3-col" style="margin-bottom: 20px;margin-top: 3%;margin-left: 1.6%">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://media.istockphoto.com/id/1583407515/ro/fotografie/fericit%C4%83-pozitiv%C4%83-femeie-matur%C4%83-%C3%AEn-uniform%C4%83-alb%C4%83-%C3%AEmpu%C8%99cat%C4%83-%C3%AEn-cap.jpg?s=612x612&w=0&k=20&c=UiOADqsGsXlABgLUyIhzcu1YV6wYap21foQ82Ynn-90="
+                 alt="Department 6" style="width:100%">
+            <div class="doctor-name">
+                <p>Dr. Emily Halpert - Director of Neurology</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="w3-col" style="margin-bottom: 20px;margin-top: 3%;margin-left: 1.6%">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://img.freepik.com/free-photo/portrait-doctor_144627-39381.jpg" alt="Department 4"
+                 style="width:100%">
+            <div class="doctor-name">
+                <p>Dr. Emilia Perez - Neurology</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="w3-col" style="margin-bottom: 20px;margin-top: 3%;margin-left: 1.6%">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://media.istockphoto.com/id/1329569957/ro/fotografie/fericit%C4%83-t%C3%A2n%C4%83r%C4%83-doctor-de-sex-feminin-uita-la-aparatul-de-fotografiat.jpg?s=612x612&w=0&k=20&c=3ikYI9DmLkJbhbpgvUsAqHacc_GKRl34r0gGIJYh6DI="
+                 alt="Department 5" style="width:100%">
+            <div class="doctor-name">
+                <p>Dr. Olivia Bennett - Head of Cardiology</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="w3-col" style="margin-bottom: 20px;margin-top: 3%;margin-left: 1.6%">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://img.freepik.com/free-photo/medium-shot-doctor-wearing-coat_23-2148816198.jpg"
+                 alt="Department 6" style="width:100%">
+            <div class="doctor-name">
+                <p>Dr. Nicolas Brown - Cardiology</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-col" style="margin-bottom: 20px;margin-top: 3%;margin-left: 1.6%">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://media.istockphoto.com/id/1311511363/ro/fotografie/portretul-cu-capul-al-medicului-de-sex-masculin-z%C3%A2mbitor-cu-tablet%C4%83.jpg?s=612x612&w=0&k=20&c=vEO6A3uc7jjgPwvAKpAMI350mUzu3NkqxMQCIvHBVNI="
+                 alt="Department 4" style="width:100%">
+            <div class="doctor-name">
+                <p>Dr. Benjamin Turner - Chief of Emergency Medicine</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="w3-col" style="margin-bottom: 20px;margin-top: 3%;margin-left: 1.6%">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://img.freepik.com/premium-photo/handsome-smiling-medicine-doctor-sitting-office_151013-2102.jpg"
+                 alt="Department 5" style="width:100%">
+            <div class="doctor-name">
+                <p>Dr. Mark Turing - Emergency Medicine</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 9 -->
+    <div class="w3-col" style="margin-bottom: 20px;margin-top: 3%;margin-left: 1.6%">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://media.istockphoto.com/id/1308951063/ro/fotografie/portretul-cu-capul-al-medicului-masculin-caucazian-matur-%C3%AEn-uniform%C4%83.jpg?s=612x612&w=0&k=20&c=uaB1KMZR9iM_eTbiMRnQBde76B_X4GcV_rib6Ht8lOM="
+                 alt="Department 6" style="width:100%">
+            <div class="doctor-name">
+                <p>Dr. Marcus Davis - Director of Oncology</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-col" style="margin-bottom: 20px;margin-top: 3%;margin-left: 1.6%">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://img.freepik.com/premium-photo/young-optimistic-woman-doctor-is-holding-clipboard-her-hands-while-standing-sunny-clinic-portrait-friendly-female-physician-with-stethoscope-perfect-medical-service-hospital-me_665183-16707.jpg"
+                 alt="Department 4" style="width:100%">
+            <div class="doctor-name">
+                <p>Dr. Lara Marshall - Oncology</p>
+            </div>
+        </div>
+    </div>
+    <!-- Card 12 -->
+    <div class="w3-col" style="margin-bottom: 20px;margin-top: 3%;margin-left: 1.6%">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://i.pinimg.com/736x/97/53/52/975352ebd5f32f0bdaab8255379f5b3b.jpg" alt="Department 6"
+                 style="width:68%">
+            <div class="doctor-name">
+                <p>Dr. Hugh Kenneth - Chief of Gastroenterology</p>
+            </div>
+        </div>
+    </div>
+    <div class="w3-col" style="margin-bottom: 20px;margin-top: 3%;margin-left: 1.6%">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://www.hjhospitals.org/photos/doctors/_MG_1223t.jpg" alt="Department 6" style="width:100%">
+            <div class="doctor-name">
+                <p>Dr. Hugh Kenneth - Chief of Gastroenterology</p>
+            </div>
+        </div>
+    </div>
+    <script src="/js/viewport_cards.js"></script>
+</div>
+</body>
+</html>

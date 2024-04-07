@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Department</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"  />
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 20%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #002e4d;
+            overflow-x: hidden;
+            padding-top: 2.5%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidenav img {
+            width: 80px; /* Adjust the width of the image */
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .sidenav a {
+            padding: 20px 20px 20px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #e6f7ff;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            color: #007ab3;
+        }
+
+        .upperBox {
+            margin-left: 240px; /* Same as the width of the sidenav */
+            height: 70px;
+            background-color: #000000;
+        }
+
+        .main {
+            margin-left: 20%; /* Same as the width of the sidenav */
+            padding: 2% 1%; /* Adjusted padding to move content even lower */
+            overflow-y: scroll; /* Add scroll to the main content */
+            height: 100vh; /* Set the height to 100% of the viewport height */
+
+        }
+
+        .main h2 {
+            width: 50%; /* Set width for main text box */
+            font-family: "Times New Roman", sans-serif;
+            font-size: 30px;
+            color: #004d99;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: 5% auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: #f8f9fa; /* Light gray background color */
+        }
+
+        /* Style for form labels */
+        label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Style for input fields */
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Style for buttons */
+        .button-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .button-secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+
+        /* Center the buttons */
+        .text-center {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div class="sidenav">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU" alt="Profile Image">
+</div>
+<div class="upperBox"></div>
+<div class="main">
+    <div class="container-fluid">
+        <div class="text-center"><h2> Edit Department</h2></div>
+
+        <form class="form-container" th:action="@{/departments/save}" method="post" th:object="${department}"
+              style="max-width: 65%; margin: 5% auto;">
+            <input type="hidden" th:field="*{id}">
+            <input type="hidden" th:field="*{name}" th:value="${department.name}">
+            <div class="border border-secondary rounded p-3">
+                <!-- Display current information -->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Name:</label>
+                    <div class="col-sm-8">
+                        <input type="text" style="width: 90%; height: 40px"; class="form-control" th:value="${department.name}" readonly/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">doctors:</label>
+                    <div class="col-sm-8">
+                        <select multiple="multiple" style="width: 90%; height: 40px"; th:field="*{doctors}" class="form-control" required>
+                            <th:block th:each="doctor:${doctorList}">
+                                <option th:text="${doctor.id +' '+doctor.firstName + ' ' + doctor.lastName}" th:value="${doctor.id}"></option>
+                            </th:block>
+                        </select>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn button-primary m-2">Save</button>
+                    <button type="button" class="btn button-secondary m-2" onclick="cancelForm()">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function cancelForm() {
+        window.location = "[[@{/departments}]]";
+    }
+</script>
+</body>
+</html>

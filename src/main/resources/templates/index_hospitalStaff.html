@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" type="text/css" href="/css/index_hospitalStaff.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body style="background-color: #002e4d;">
+
+<div class="sidenav">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU"
+         alt="Profile Image">
+    <a th:href="@{/logout}">Log out</a>
+    <a th:href="@{/appointments}">Appointments</a>
+    <a th:href="@{/admissions}">Admissions</a>
+    <a th:href="@{/doctors}">Doctors</a>
+    <a th:href="@{/departments}">Departments</a>
+    <a th:href="@{/emergencyRoom}">Emergency Room</a>
+    <a th:href="@{/hospitalRooms}">Hospital Rooms</a>
+    <a th:href="@{/hospitalBillingSystems}">Hospital Billing System</a>
+    <a th:href="@{/labTestResults}">Lab Test Results</a>
+    <a th:href="@{/medications}">Medications</a>
+    <a th:href="@{/patients}">Patients</a>
+    <a th:href="@{/prescriptions}">Prescriptions</a>
+</div>
+
+<div class="box">
+    <h5><a th:href="@{/appointments}"  style="color: white; text-decoration: none;">Appointments</a></h5>
+    <p>Manage appointments for patients.</p>
+</div>
+<div class="box2">
+    <h5><a th:href="@{/admissions}" style="color: white; text-decoration: none;">Admissions</a></h5>
+    <p>Handle admissions of new patients.</p>
+</div>
+<div class="box3">
+    <h5><a th:href="@{/doctors}" style="color: white; text-decoration: none;">Doctors</a></h5>
+    <p>View and manage doctors information.</p>
+</div>
+
+<div class="box" style="top: 40%;">
+    <h5><a th:href="@{/departments}"  style="color: white; text-decoration: none;">Departments</a></h5>
+    <p>Explore hospital departments.</p>
+</div>
+<div class="box2" style="top: 40%; left: 41%;">
+    <h5><a th:href="@{/emergencyRoom}" style="color: white; text-decoration: none;">Emergency Room</a></h5>
+    <p>Access emergency room details.</p>
+</div>
+<div class="box3" style="top: 40%; left: 70%;">
+    <h5><a th:href="@{/hospitalRooms}" style="color: white; text-decoration: none;">Hospital Rooms</a></h5>
+    <p>View hospital room information.</p>
+</div>
+
+<div class="box" style="top: 80%;">
+    <h5><a th:href="@{/hospitalBillingSystems}"  style="color: white; text-decoration: none;">Hospital Billing System</a></h5>
+    <p>Manage hospital billing systems.</p>
+</div>
+<div class="box2" style="top: 80%; left: 41%;">
+    <h5><a th:href="@{/labTestResults}" style="color: white; text-decoration: none;">Lab Test Results</a></h5>
+    <p>Access lab test results.</p>
+</div>
+<div class="box3" style="top: 80%; left: 70%;">
+    <h5><a th:href="@{/medications}" style="color: white; text-decoration: none;">Medications</a></h5>
+    <p>Manage hospital medications.</p>
+</div>
+
+<div class="box" style="top: 120%;">
+    <h5><a th:href="@{/patients}"  style="color: white; text-decoration: none;">Patients</a></h5>
+    <p>View and manage patient records.</p>
+</div>
+<div class="box2" style="top: 120%; left: 41%;">
+    <h5><a th:href="@{/prescriptions}" style="color: white; text-decoration: none;">Prescriptions</a></h5>
+    <p>Manage patient prescriptions.</p>
+</div>
+
+</body>
+</html>

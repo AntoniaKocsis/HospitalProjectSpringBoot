@@ -1,0 +1,152 @@
+
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.sidenav {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #002e4d;
+    overflow-x: hidden;
+    padding-top: 2.5%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sidenav img {
+    width: 60%; /* Adjust the width of the image */
+    border-radius: 50%;
+    margin-bottom: 10%;
+    margin-left: 20%;
+}
+.sidenav a {
+    display: block;
+    padding: 10%;
+    text-decoration: none;
+    color: #ccc;
+    background-color: #002e4d;
+    border: 1px solid #002e4d;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+
+    font-size: 18px;
+}
+
+/* Hover effect for navigation links */
+.sidenav a:hover {
+    background-color:
+            rgb(126, 177, 200);
+}
+.upperBox {
+    margin-left: 240px; /* Same as the width of the sidenav */
+    height: 70px;
+    background-color: #000000;
+}
+.main {
+    margin-left: 15%;
+    padding-left: 5%; /* Add padding to main content */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically in flex container */
+}
+.mainTextBox {
+    padding-left: 10%;
+    width: 30%; /* Set width for main text box */
+    font-family: "Times New Roman", sans-serif;
+    font-size: 50px;
+    color: #004d99;
+    margin-right: 10%;
+}
+
+
+.w3-row-padding {
+    margin-left: 19%;
+    margin-top: 4%; /* Adjusted margin-top */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Improved layout */
+}
+
+.w3-col {
+    flex: 0 0 calc(33.333% - 20px); /* Adjusted width and added spacing between cards */
+    margin-bottom: 20px;
+}
+
+.w3-card-4 {
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.w3-card-4:hover {
+    transform: scale(1.05);
+}
+
+.doctor-name {
+    background-color: rgba(135, 206, 250, 0.6);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 5px;
+    opacity: 0.9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.slideshow-container {
+    max-width: 1600px;
+    position: relative;
+    margin-left: 20%;
+}
+
+.mySlides {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards; /* Adjust the duration as needed */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeOut {
+    animation: fadeOut 2s forwards; /* Adjust the duration as needed */
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.text-container {
+    position: absolute;
+    top: 80%;
+    right: 0;
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40%;
+    color: #fff;
+    background-color: rgba(135, 206, 250, 0.6); /* Slightly transparent background */
+    padding: 20px; /* Adjust padding as needed */
+}
+
+.text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}

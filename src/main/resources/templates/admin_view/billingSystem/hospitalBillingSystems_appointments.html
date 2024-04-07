@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointments Billing System</title>
+    <link rel="stylesheet" type="text/css" href="/css/table_page_style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body style="background-image: url('https://www.healthworkscollective.com/wp-content/uploads/2021/03/doctor-appointment.jpg')">
+<div class="sidenav">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU"
+         alt="Profile Image">
+    <a class="h4" style="margin-top: 10%" th:href="@{/index_hospitalStaff}">Home Page</a>
+    <a class="h4" th:href="@{/hospitalBillingSystems}">Test Bills</a>
+    <a class="h4" th:href="@{/hospitalBillingSystems/appointments}">Appointment Bills</a>
+    <a class="h4" th:href="@{/hospitalBillingSystems/select_patient}">Search Test Bills For Patient</a>
+    <a class="h4" th:href="@{/hospitalBillingSystems/select_patient_for_appointment}">Search Appointment Bills For
+        Patient</a>
+</div>
+<div class="main">
+    <div class="container-fluid text-center">
+        <div class="title-box">
+            <h2>Appointment Billing</h2> <!-- Add title "Doctors" -->
+        </div>
+        <div>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Appointment ID</th>
+                    <th>Patient ID</th>
+                    <th>Doctor ID</th>
+                    <th>Date</th>
+                    <th>Examination Room</th>
+                    <th>Total Cost</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <th:block th:each="instance : ${appointmentBills}">
+                    <tr>
+                        <td>[[${instance.key.id}]]</td>
+                        <td>[[${instance.key.patient.id}]]</td>
+                        <td>[[${instance.key.doctor.id}]]</td>
+                        <td>[[${instance.key.date}]]</td>
+                        <td>[[${instance.key.examinationRoom.id}]]</td>
+                        <td>[[${instance.value}]]</td>
+                    </tr>
+                </th:block>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

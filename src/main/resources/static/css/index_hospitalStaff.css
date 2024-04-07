@@ -1,0 +1,157 @@
+body {
+    background-color: #002e4d; /* Set the background color */
+    color: white; /* Set text color */
+    font-family: Arial, sans-serif; /* Set font family */
+    font-size: 16.5px; /* Set font size */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Boxes */
+.box {
+    position: absolute;
+    background-color: rgba(102, 102, 255, 0.95);
+    width: 20%;
+    height: 200px;
+    padding: 10px 20px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 16.5px;
+    color: white;
+    margin: 5% 13%; /* Adjusted margin */
+    left: 12%; /* Adjusted left position */
+    border-radius: 15px;
+}
+
+.box h5 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.box2 {
+    position: absolute;
+    background-color: rgba(102, 153, 255,0.95);
+    width: 20%;
+    height: 200px;
+    padding: 10px 20px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 16.5px;
+    color: white;
+    margin: 5% 11%; /* Adjusted margin */
+    left: 41%; /* Adjusted left position */
+    border-radius: 15px;
+}
+.box2 h5 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.box3 {
+    position: absolute;
+    background-color: rgba(0, 153, 153, 0.95);
+    width: 20%;
+    height: 200px;
+    padding: 10px 20px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 16.5px;
+    color: white;
+    margin: 5% 8%; /* Adjusted margin */
+    left: 70%; /* Adjusted left position */
+    border-radius: 15px;
+}
+.box3 h5 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.box:hover, .box2:hover, .box3:hover {
+    background-color: rgba(200, 160, 255, 0.8);
+    transition: background-color 0.3s ease;
+}
+
+.box a, .box2 a, .box3 a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.box:hover a, .box2:hover a, .box3:hover a {
+    color: #004d99;
+}
+
+.sidenav {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #002e4d;
+    overflow-x: hidden;
+    padding-top: 2.5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenav img {
+    width: 60%; /* Adjust the width of the image */
+    border-radius: 50%;
+    margin-bottom: 10%;
+    margin-left: 20%;
+}
+
+.sidenav a {
+    display: block;
+    padding: 10%;
+    text-decoration: none;
+    color: #ccc;
+    background-color: #002e4d;
+    border: 1px solid #002e4d;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+
+    font-size: 18px;
+}
+
+/* Hover effect for navigation links */
+.sidenav a:hover {
+    background-color: rgb(126, 177, 200);
+}
+
+nav {
+    background-color: white;
+    overflow: hidden;
+    width: 65%; /* Set width for navigation */
+    padding-left: 5%;
+
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: #0066cc;
+    text-align: center;
+    padding: 2.5% 2.5%;
+    text-decoration: none;
+    font-size: 16.5px;
+}
+
+nav a:hover {
+    background-color: #ccd9ff;
+}
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 16px;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}

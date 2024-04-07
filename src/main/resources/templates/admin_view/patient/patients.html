@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Patients</title>
+    <link rel="stylesheet" type="text/css" href="/css/table_page_style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body style="background-image: url('https://guidewaycare.com/wp-content/themes/yootheme/cache/fa/6-ways-to-improve-patient-outcomes-fa42793a.jpeg')">
+<div class="sidenav">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU"
+         alt="Profile Image">
+    <a class="h4" style="margin-top: 10%" th:href="@{/index_hospitalStaff}">Home Page</a>
+    <a class="h4" th:href="@{/patients/new}">Add New Patient</a>
+</div>
+<div class="upperBox"></div>
+<div class="backgroundBox"></div>
+<div class="main">
+    <div class="container-fluid text-center">
+        <div class="title-box">
+            <h2 style="color: #3e708f">Patients</h2> <!-- Add title "Doctors" -->
+        </div>
+
+        <div>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Birth Date</th>
+                    <th>Contact</th>
+                    <th>Address</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <th:block th:each="patient : ${listPatients}">
+                    <tr>
+                        <td>[[${patient.id}]]</td>
+                        <td>[[${patient.firstName}]]</td>
+                        <td>[[${patient.lastName}]]</td>
+                        <td>[[${patient.birthDate}]]</td>
+                        <td>[[${patient.contact}]]</td>
+                        <td>[[${patient.address}]]</td>
+                        <td>
+                            <a class="h4 mr-3" th:href="@{'/patients/edit/' + ${patient.id}}">Edit</a>
+                            <a class="h4" th:href="@{'/patients/delete/' + ${patient.id}}">Delete</a>
+                        </td>
+                    </tr>
+                </th:block>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
