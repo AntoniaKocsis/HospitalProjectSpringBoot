@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seattle Grace Hospital</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
@@ -92,7 +93,7 @@
 <script src="/js/slideshow.js"></script>
 <div class="lowerBox" style="padding-top: 4%; color: white; padding-left: 10%; padding-bottom: 4%">
     Book an Appointment
-    <a href="/appointments/new">
+    <a th:href="@{/personal_information}">
         <button class="button button4"
                 style="padding-top: 2%; color: white; margin-left: 40%; font-family: Times New Roman, sans-serif; font-size: 20px">
             Schedule now
@@ -161,7 +162,5 @@
         </div>
     </div>
 </div>
-
-
 </body>
 </html>

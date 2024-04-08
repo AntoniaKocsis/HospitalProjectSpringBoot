@@ -150,3 +150,19 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
 }
+/* Add CSS styles for hiding the Meet The Doctors section by default */
+#meet-the-doctors {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease-in-out; /* Smooth transition effect */
+}
+
+/* Add CSS styles for hiding the paragraph by default */
+#doctors-paragraph {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease-in-out; /* Smooth transition effect */
+}
+
+.w3-card-4 {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease-in-out; /* Smooth transition effect */
+}

@@ -18,89 +18,64 @@
     <a th:href="@{/facilities_index}">Facilities</a>
     <a th:href="@{/contact}">Contact</a>
 </div>
-<!--<div class="upperBox"></div>-->
 <div class="slideshow-container">
     <div class="mySlides">
-        <img src="https://e0.pxfuel.com/wallpapers/389/224/desktop-wallpaper-pathology-medical-lab.jpg" style="width:100%;">
+        <img src="https://e0.pxfuel.com/wallpapers/389/224/desktop-wallpaper-pathology-medical-lab.jpg"
+             style="width:100%;">
         <div class="text-container">
-            <div class = "text">Our state-of-the-art facilities are equipped with the latest technology and modern amenities, creating an environment that prioritizes patient comfort, safety, and well-being.
+            <div class="text">Our state-of-the-art facilities are equipped with the latest technology and modern
+                amenities, creating an environment that prioritizes patient comfort, safety, and well-being.
             </div>
         </div>
     </div>
 
     <div class="mySlides">
-        <img src="https://img.freepik.com/premium-photo/doctor-research-analysis-diagnose-checking-brain-testing-result-patient-medical-technology_34200-493.jpg" style="width:100%;">
+        <img src="https://img.freepik.com/premium-photo/doctor-research-analysis-diagnose-checking-brain-testing-result-patient-medical-technology_34200-493.jpg"
+             style="width:100%;">
         <div class="text-container">
-            <div class = "text"> At Seattle~Grace Hospital, we take pride in our meticulously maintained facilities, designed to meet the highest standards of hygiene and functionality. From cutting-edge medical equipment to welcoming patient rooms, we ensure a seamless and positive healthcare experience.
+            <div class="text"> At Seattle~Grace Hospital, we take pride in our meticulously maintained facilities,
+                designed to meet the highest standards of hygiene and functionality. From cutting-edge medical equipment
+                to welcoming patient rooms, we ensure a seamless and positive healthcare experience.
             </div>
         </div>
     </div>
 
     <div class="mySlides">
-        <img src="https://cmescience.com/wp-content/uploads/2018/04/guide-to-becoming-a-radiologist.png" style="width:100%;">
+        <img src="https://cmescience.com/wp-content/uploads/2018/04/guide-to-becoming-a-radiologist.png"
+             style="width:100%;">
         <div class="text-container">
-            <div class = "text"> With a focus on providing a healing environment, our facilities are thoughtfully designed to offer a blend of functionality and aesthetics. From spacious waiting areas to specialized treatment rooms, we strive to create spaces that contribute to the overall well-being of our patients.
+            <div class="text"> With a focus on providing a healing environment, our facilities are thoughtfully designed
+                to offer a blend of functionality and aesthetics. From spacious waiting areas to specialized treatment
+                rooms, we strive to create spaces that contribute to the overall well-being of our patients.
             </div>
         </div>
     </div>
 </div>
-
-<script>
-    let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-            slides[i].classList.remove("fadeOut");
-        }
-
-        slideIndex++;
-        if (slideIndex > slides.length) {
-            slideIndex = 1;
-        }
-
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(() => {
-            slides[slideIndex - 1].classList.add("fadeOut");
-        }, 5000); // Start fade out after 5 seconds (adjust if necessary)
-
-        updateText();
-
-        setTimeout(showSlides, 7000); // Change slide every 9 seconds (total 7 seconds per slide with fade)
-    }
-
-    function updateText() {
-        let text = "Default Text";
-
-        switch (slideIndex) {
-            case 1:
-                text = "Our state-of-the-art facilities are equipped with the latest technology and modern amenities, creating an environment that prioritizes patient comfort, safety, and well-being."
-                break;
-            case 2:
-                text = "At Seattle~Grace Hospital, we take pride in our meticulously maintained facilities, designed to meet the highest standards of hygiene and functionality. From cutting-edge medical equipment to welcoming patient rooms, we ensure a seamless and positive healthcare experience"
-                break;
-            case 3:
-                text = "With a focus on providing a healing environment, our facilities are thoughtfully designed to offer a blend of functionality and aesthetics. From spacious waiting areas to specialized treatment rooms, we strive to create spaces that contribute to the overall well-being of our patients."
-                break;
-        }
-
-        document.querySelector('.text').innerText = text;
-    }
-</script>
-<div style = "margin-left:24%;font-family: Georgia, serif;font-size:20px;">
-    <p style = "padding: 8%">Seattle Grace Hospital offers a comprehensive range of services dedicated to providing exceptional healthcare to our patients. With state-of-the-art facilities and a team of skilled professionals, we deliver compassionate care across various medical specialties. From advanced surgical procedures to diagnostic imaging, laboratory services, and specialized treatments, our commitment to excellence ensures that every patient receives personalized attention and the highest quality of care. At Seattle Grace Hospital, we prioritize patient well-being, safety, and comfort, striving to exceed expectations and foster a supportive healing environment for all.
+<script src="/js/slideshow.js"></script>
+<div id="facilities"
+     style="margin-top: 5%; margin-left: 23%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <h2 style="font-size: 28px; color: black;">
+        <span style="border-bottom: 2px solid #007bff;">Provided Services</span>
+    </h2>
+</div>
+<script src="/js/viewport_title_facilities.js"></script>
+<div id="facilities-paragraph" style="margin-top:0%;margin-left:24%;font-family: Georgia, serif;font-size:20px;">
+    <p style="padding: 5%">Seattle Grace Hospital offers a comprehensive range of services dedicated to providing
+        exceptional healthcare to our patients. With state-of-the-art facilities and a team of skilled professionals, we
+        deliver compassionate care across various medical specialties. From advanced surgical procedures to diagnostic
+        imaging, laboratory services, and specialized treatments, our commitment to excellence ensures that every
+        patient receives personalized attention and the highest quality of care. At Seattle Grace Hospital, we
+        prioritize patient well-being, safety, and comfort, striving to exceed expectations and foster a supportive
+        healing environment for all.
     </p>
 </div>
-
-<div class="w3-row-padding" style = "margin-left: 24%;margin-top: 3%;">
+<script src="/js/viewport_paragraph_facilities.js"></script>
+<div class="w3-row-padding" style="margin-left: 24%;margin-top: 3%;">
 
     <div class="w3-col" style="margin-bottom: 20px">
         <div class="w3-card-4" style="width:88%">
-            <img src="https://blog.casectrl.com/hubfs/Imported_Blog_Media/8-Ways-to-Improve-Operating-Room-Efficiency.jpeg" alt="Department 4" style="width:100%">
+            <img src="https://blog.casectrl.com/hubfs/Imported_Blog_Media/8-Ways-to-Improve-Operating-Room-Efficiency.jpeg"
+                 alt="Department 4" style="width:100%">
             <div class="facility-name">
                 <p>Operating Theatres</p>
             </div>
@@ -110,7 +85,8 @@
     <!-- Card 5 -->
     <div class="w3-col" style="margin-bottom: 20px">
         <div class="w3-card-4" style="width:88%">
-            <img src="https://aica.com/wp-content/uploads/2020/02/What-Are-the-Different-Types-of-Diagnostic-Imaging-Tests-Available.jpg" alt="Department 5" style="width:100%">
+            <img src="https://aica.com/wp-content/uploads/2020/02/What-Are-the-Different-Types-of-Diagnostic-Imaging-Tests-Available.jpg"
+                 alt="Department 5" style="width:100%">
             <div class="facility-name">
                 <p>Diagnostic Imaging Center</p>
             </div>
@@ -120,7 +96,8 @@
     <!-- Card 6 -->
     <div class="w3-col" style="margin-bottom: 20px">
         <div class="w3-card-4" style="width:88%">
-            <img src="https://anmed.org/sites/default/files/styles/banner_image/public/2022-08/iStock-1389436565.jpg?itok=z8mWfFZs" alt="Department 6" style="width:100%">
+            <img src="https://anmed.org/sites/default/files/styles/banner_image/public/2022-08/iStock-1389436565.jpg?itok=z8mWfFZs"
+                 alt="Department 6" style="width:100%">
             <div class="facility-name">
                 <p>Laboratory Services</p>
             </div>
@@ -129,7 +106,8 @@
 
     <div class="w3-col" style="margin-bottom: 20px;margin-top: 3%;margin-left: 1.6%">
         <div class="w3-card-4" style="width:88%">
-            <img src="https://news.mit.edu/sites/default/files/images/202309/MIT_Primary-Care-01.jpg" alt="Department 4" style="width:100%">
+            <img src="https://news.mit.edu/sites/default/files/images/202309/MIT_Primary-Care-01.jpg" alt="Department 4"
+                 style="width:100%">
             <div class="facility-name">
                 <p>Emergency Department</p>
             </div>
@@ -149,12 +127,14 @@
     <!-- Card 6 -->
     <div class="w3-col" style="margin-bottom: 20px;margin-top: 3%;margin-left: 1.6%">
         <div class="w3-card-4" style="width:88%">
-            <img src="https://www.monash.edu/__data/assets/image/0004/2769025/Clinical-patient-on-ward.jpg" alt="Department 6" style="width:100%">
+            <img src="https://www.monash.edu/__data/assets/image/0004/2769025/Clinical-patient-on-ward.jpg"
+                 alt="Department 6" style="width:100%">
             <div class="facility-name">
                 <p>Intensive Care Unit (ICU)</p>
             </div>
         </div>
     </div>
 </div>
+<script src="/js/viewport_cards.js"></script>
 </body>
 </html>

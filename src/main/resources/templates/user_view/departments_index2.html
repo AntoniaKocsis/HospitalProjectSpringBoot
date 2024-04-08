@@ -7,7 +7,6 @@
   <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 </head>
 <body>
 <div class="sidenav">
@@ -18,7 +17,6 @@
   <a th:href="@{/departments_index2}">Departments</a>
   <a th:href="@{/facilities_index2}">Facilities</a>
   <a th:href="@{/contact2}">Contact</a>
-  <a th:href="@{/logout}">Log Out</a>
 </div>
 <div class="slideshow-container">
   <div class="mySlides">
@@ -45,59 +43,29 @@
     </div>
   </div>
 </div>
-
-<script>
-  let slideIndex = 0;
-  showSlides();
-
-  function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-      slides[i].classList.remove("fadeOut");
-    }
-
-    slideIndex++;
-    if (slideIndex > slides.length) {
-      slideIndex = 1;
-    }
-
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(() => {
-      slides[slideIndex - 1].classList.add("fadeOut");
-    }, 5000); // Start fade out after 5 seconds (adjust if necessary)
-
-    updateText();
-
-    setTimeout(showSlides, 7000); // Change slide every 9 seconds (total 7 seconds per slide with fade)
-  }
-
-  function updateText() {
-    let text = "Default Text";
-
-    switch (slideIndex) {
-      case 1:
-        text = "At our hospital, we prioritize your well-being. From state-of-the-art medical facilities to a dedicated team of healthcare professionals, we are committed to providing personalized care that puts your health at the forefront.";
-        break;
-      case 2:
-        text = "Embrace the future of healthcare with us. Our hospital is at the forefront of medical innovation, integrating advanced technologies and cutting-edge treatments to ensure you receive the best possible care. Your health is our inspiration for a healthier tomorrow.";
-        break;
-      case 3:
-        text = "Experience the difference of compassionate care backed by exceptional medical expertise. Our team of skilled doctors and staff is dedicated to delivering the highest standards of healthcare, ensuring you feel supported and well-informed throughout your journey to recovery";
-        break;
-    }
-
-    document.querySelector('.text').innerText = text;
-  }
-</script>
-
-<div class="w3-row-padding" style = "margin-left: 24%; margin-top: 20%">
+<script src="/js/slideshow.js"></script>
+<div id="departments"
+     style="margin-top: 20%; margin-left: 23%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <h2 style="font-size: 28px; color: black;">
+    <span style="border-bottom: 2px solid #007bff;">Meet The Doctors</span>
+  </h2>
+</div>
+<script src="/js/viewport_title_departments.js"></script>
+<div id="departments-paragraph" style="margin-top:0%;margin-left:24%;font-family: Georgia, serif;font-size:20px;">
+  <p style="padding: 5%">Seattle Grace Hospital prides itself on its distinguished team of doctors, renowned for their
+    expertise and compassionate care. Our doctors are leaders in their respective fields, offering a wealth of
+    experience and a commitment to excellence in every patient interaction. With a focus on patient well-being and
+    safety, our doctors prioritize personalized care, ensuring each patient receives the highest quality treatment
+    tailored to their unique needs. At Seattle Grace Hospital, patients can trust in the skill and dedication of our
+    doctors to provide exceptional healthcare and support throughout their journey to recovery.
+  </p>
+</div>
+<script src="/js/viewport_paragraph_departments.js"></script>
+<div class="w3-row-padding" style="margin-left: 24%; margin-top: 0%">
   <div class="w3-col" style="margin-bottom: 20px">
     <div class="w3-card-4" style="width:80%">
       <img src="https://static.vecteezy.com/system/resources/previews/002/553/256/original/heartbeat-cardiology-medical-and-health-care-line-style-icon-free-vector.jpg" alt="Department 4" style="width:100%">
-      <div class="doctor-name">
+      <div class="department-name">
         <p>Cardiology</p>
       </div>
     </div>
@@ -107,7 +75,7 @@
   <div class="w3-col" style="margin-bottom: 20px">
     <div class="w3-card-4" style="width:80%">
       <img src="https://static.vecteezy.com/system/resources/previews/010/752/414/original/neurology-icon-design-free-vector.jpg" alt="Department 5" style="width:100%">
-      <div class="doctor-name">
+      <div class="department-name">
         <p>Neurology</p>
       </div>
     </div>
@@ -117,7 +85,7 @@
   <div class="w3-col" style="margin-bottom: 20px">
     <div class="w3-card-4" style="width:80%">
       <img src="https://static.thenounproject.com/png/3981849-200.png" alt="Department 6" style="width:100%">
-      <div class="doctor-name">
+      <div class="department-name">
         <p>Obstetrics and Gynecology</p>
       </div>
     </div>
@@ -126,7 +94,7 @@
   <div class="w3-col" style="margin-bottom: 20px;margin-top: 5%;margin-left: 1.6%">
     <div class="w3-card-4" style="width:80%">
       <img src="https://static.thenounproject.com/png/3627851-200.png" alt="Department 4" style="width:100%">
-      <div class="doctor-name">
+      <div class="department-name">
         <p>Emergency Medicine</p>
       </div>
     </div>
@@ -136,7 +104,7 @@
   <div class="w3-col" style="margin-bottom: 20px;margin-top: 5%;margin-left: 1.6%">
     <div class="w3-card-4" style="width:80%">
       <img src="https://cdn-icons-png.flaticon.com/512/6974/6974791.png" alt="Department 5" style="width:100%">
-      <div class="doctor-name">
+      <div class="department-name">
         <p>Oncology</p>
       </div>
     </div>
@@ -146,11 +114,12 @@
   <div class="w3-col" style="margin-bottom: 20px;margin-top: 5%;margin-left: 1.6%">
     <div class="w3-card-4" style="width:80%">
       <img src="https://cdn-icons-png.flaticon.com/512/6669/6669499.png" alt="Department 6" style="width:100%">
-      <div class="doctor-name">
+      <div class="department-name">
         <p>Gastroenterology</p>
       </div>
     </div>
   </div>
+  <script src="/js/viewport_cards.js"></script>
 </div>
 </body>
 </html>
