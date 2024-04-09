@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Add New Patient</title>
+    <title>Edit Appointment</title>
     <link rel="stylesheet" type="text/css" href="/css/form_styling.css">
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -103,61 +103,57 @@
         }
     </style>
 </head>
-
 <body>
 <div class="overlay"></div>
 <div class="main">
+    <div class="container-fluid">
+
+        <form class="form-container" th:action="@{/confirm_appointment/save}" method="post" th:object="${appointment}"
+              style="max-width: 70%; margin: 5% auto;">
+            <input type="hidden" th:field="*{id}">
+            <input type="hidden" th:field="*{patient}">
+            <input type="hidden" th:field="*{doctor}">
+            <input type="hidden" th:field="*{examinationRoom}">
+
+            <!-- Patient Information -->
+            <div class="border border-secondary rounded p-3">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Patient:</label>
+                    <div class="col-sm-8">
+                        <input type="text" style="width: 90%; height: 40px;" class="form-control" th:value="${appointment.patient.firstName + ' ' + appointment.patient.lastName}" readonly/>
+                    </div>
+                </div>
 
 
-    <form class="form-container" th:action="@{/personal_information/save}" method="post" th:object="${patient}"
-          style="max-width: 65%; margin: 3% auto;">
-        <input type="hidden" th:field="*{id}">
-        <div class="border border-secondary rounded p-3">
-            <div class="form-group row">
-                <label class="col-sm-4 col-form-label">First Name:</label>
-                <div class="col-sm-8">
-                    <input type="text" th:field="*{firstName}" style="width: 90%; height: 40px" ;
-                           class="form-control" required minlength="2" maxlength="45"/>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Doctor:</label>
+                    <div class="col-sm-8">
+                        <input type="text" style="width: 90%; height: 40px;" class="form-control" th:value="${appointment.doctor.firstName + ' ' + appointment.doctor.lastName}" readonly/>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Last Name:</label>
-                <div class="col-sm-8">
-                    <input type="text" th:field="*{lastName}" style="width: 90%; height: 40px" ;
-                           class="form-control" required minlength="2" maxlength="45"/>
+                <!-- Examination Room selection -->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Examination Room:</label>
+                    <div class="col-sm-8">
+                        <input type="text" style="width: 90%; height: 40px;" class="form-control" th:value="${appointment.examinationRoom.roomNumber}" readonly/>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Birth Date:</label>
-                <div class="col-sm-8">
-                    <input type="datetime-local" th:field="*{birthDate}" style="width: 90%; height: 40px" ;
-                           class="form-control" required/>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Contact:</label>
-                <div class="col-sm-8">
-                    <input type="text" th:field="*{contact}" style="width: 90%; height: 40px" ; class="form-control"
-                           required minlength="5" maxlength="15"/>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Address:</label>
-                <div class="col-sm-8">
-                    <input type="text" th:field="*{address}" style="width: 90%; height: 40px" ; class="form-control"
-                           required minlength="5" maxlength="15"/>
-                </div>
-            </div>
-            <div class="text-center">
-                <button type="submit" class="btn button-primary m-2">Next</button>
-                <button type="button" class="btn button-secondary m-2" onclick="cancelForm()">Cancel</button>
-            </div>
-        </div>
 
-    </form>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Date:</label>
+                    <div class="col-sm-8">
+                        <input type="text" style="width: 90%; height: 40px;" class="form-control" th:value="${appointment.date}" readonly/>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn button-primary m-2">Confirm</button>
+                    <button type="button" class="btn button-secondary m-2" onclick="cancelForm()">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
-
-
 <script type="text/javascript">
     function cancelForm() {
         window.location = "[[@{/}]]";
