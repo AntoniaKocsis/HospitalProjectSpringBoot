@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Select Department</title>
-    <link rel="stylesheet" type="text/css" href="/css/form_styling.css">
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         body {
-            background-image: url('https://wallpaper.dog/large/20499790.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -27,10 +25,12 @@
         .main {
             max-width: 800px;
             margin: 20px auto;
-            background-color: rgba(24, 55, 75, 0.7);
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+
+            background: url(https://healthcaredesignmagazine.com/wp-content/uploads/2022/10/02-scaled.jpg) no-repeat center;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+            display: flex;
+            background-size: cover;
         }
 
         .w3-row-padding {
@@ -66,12 +66,14 @@
         }
 
         .department-name {
-            background-color: rgba(54, 113, 150, 0.8);
-            color: #fff;
+            color: #aaa;
+            font-size: 16px;
+            font-weight: bolder;
+            display: block;
+            background-color: rgb(27, 69, 101);
             padding: 10px;
             text-align: center;
             border-radius: 0 0 5px 5px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         /* Style when card is selected */
@@ -81,16 +83,16 @@
 
         /* Next button style */
         .next-button {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 16px;
+            width: 500px;
+            padding: 20px;
             border: none;
-            background-color: rgba(58, 121, 162, 0.6);
+            border-radius: 20px;
+            background: #3e708f;
             color: #fff;
+            font-weight: bold;
             cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            margin-top: 10px;
+            margin-left: 18%;
         }
 
         .next-button:hover {
@@ -98,11 +100,10 @@
         }
     </style>
 </head>
-<body>
-<div class="overlay"></div>
+<body style="background: rgb(4, 48, 77);">
 <div class="main">
 
-    <form class="form-container" th:action="@{/select_doctor}" method="get">
+    <form class="form-container" th:action="@{/select_doctor}" method="get" style="background: rgba(40, 57, 101, .9); padding: 20px;">
         <div class="w3-row-padding">
             <!-- Cardiology -->
             <div class="w3-col department-card">

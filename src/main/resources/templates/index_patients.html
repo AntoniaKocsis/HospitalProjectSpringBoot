@@ -1,155 +1,117 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Seattle Grace Hospital</title>
-  <link rel="stylesheet" type="text/css" href="/css/styles.css">
-  <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seattle Grace Hospital</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidenav_styling.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 <div class="sidenav">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU"
-       alt="Profile Image">
-  <a th:href="@{/index_patients}">About Us</a>
-  <a th:href="@{/doctors_index2}">Doctors</a>
-  <a th:href="@{/departments_index2}">Departments</a>
-  <a th:href="@{/facilities_index2}">Facilities</a>
-  <a th:href="@{/contact2}">Contact</a>
-  <a th:href="@{/logout}">Log Out</a>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU"
+         alt="Profile Image">
+    <a th:href="@{/index_patients}">About Us</a>
+    <a th:href="@{/doctors_index2}">Doctors</a>
+    <a th:href="@{/departments_index2}">Departments</a>
+    <a th:href="@{/facilities_index2}">Facilities</a>
+    <a th:href="@{/contact2}">Contact</a>
+    <a th:href="@{/logout}">Log Out</a>
 </div>
+<div class="upperBox"></div>
 <div class="slideshow-container">
 
-  <div class="mySlides fadeContainer">
-    <div class="numbertext">1 / 3</div>
-    <img src="https://w0.peakpx.com/wallpaper/315/432/HD-wallpaper-medical-hospital.jpg" style="width:100%">
-    <div class="box">
-      <h5><a th:href="@{/departments_index}" style="color: white; text-decoration: none;">Departments</a></h5>
-      <p>Explore our various departments and the services they offer to ensure your health is well taken care
-        of.</p>
-    </div>
-    <div class="box2">
-      <h5><a th:href="@{/doctors_index}" style="color: white; text-decoration: none;">Doctors</a></h5>
-      <p>Meet our team of experienced and knowledgeable doctors who are dedicated to providing quality care to our
-        patients.</p>
-    </div>
-    <div class="box3">
-      <h5><a th:href="@{/facilities_index}" style="color: white; text-decoration: none;">Facilities</a></h5>
-      <p>We provide state-of-the-art medical facilities equipped with the latest medical devices and technology to
-        ensure the best treatment for our patients.</p>
+    <div class="mySlides fadeContainer">
+        <div class="numbertext">1 / 3</div>
+        <img src="https://www.clujmedicalcenter.ro/wp-content/uploads/2023/10/Untitled-design-2023-10-16T234917.685.jpg"
+             style="width:100%">
+
     </div>
 
-  </div>
-
-  <div class="mySlides fadeContainer">
-    <div class="numbertext">2 / 3</div>
-    <img src="https://betterhealthwhileaging.net/wp-content/uploads/2015/07/bigstock-Doctor-Discussing-Records-With-41853415.jpg"
-         style="width:100%">
-    <div class="box">
-      <h5><a th:href="@{/departments_index}"  style="color: white; text-decoration: none;">Departments</a></h5>
-      <p>Explore our various departments and the services they offer to ensure your health is well taken care
-        of.</p>
-    </div>
-    <div class="box2">
-      <h5><a th:href="@{/doctors_index}" style="color: white; text-decoration: none;">Doctors</a></h5>
-      <p>Meet our team of experienced and knowledgeable doctors who are dedicated to providing quality care to our
-        patients.</p>
-    </div>
-    <div class="box3">
-      <h5><a th:href="@{/facilities_index}" style="color: white; text-decoration: none;">Facilities</a></h5>
-      <p>We provide state-of-the-art medical facilities equipped with the latest medical devices and technology to
-        ensure the best treatment for our patients.</p>
-    </div>
-  </div>
-
-  <div class="mySlides fadeContainer">
-    <div class="numbertext">3 / 3</div>
-    <img src="https://cdn.castleconnolly.com/dims4/default/7a3d393/2147483647/strip/true/crop/1200x675+0+0/resize/840x472!/quality/90/?url=http%3A%2F%2Fcastle-connolly-brightspot.s3.us-east-1.amazonaws.com%2Ffc%2F15%2Fde62e4dc410c815da398197715f0%2Fpillar-diagnostic-radiology-46-1200x675.jpg"
-         style="width:100%">
-    <div class="box">
-      <h5><a th:href="@{/departments_index}"  style="color: white; text-decoration: none;">Departments</a></h5>
-      <p>Explore our various departments and the services they offer to ensure your health is well taken care of.</p>
+    <div class="mySlides fadeContainer">
+        <div class="numbertext">2 / 3</div>
+        <img src="https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg"
+             style="width:100%">
     </div>
 
-    <div class="box2">
-      <h5><a th:href="@{/doctors_index}" style="color: white; text-decoration: none;">Doctors</a></h5>
-      <p>Meet our team of experienced and knowledgeable doctors who are dedicated to providing quality care to our patients.</p>
+    <div class="mySlides fadeContainer">
+        <div class="numbertext">3 / 3</div>
+        <img src="https://images.pexels.com/photos/4226219/pexels-photo-4226219.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+             style="width:100%">
     </div>
-
-    <div class="box3">
-      <h5><a th:href="@{/facilities_index}"  style="color: white; text-decoration: none;">Facilities</a></h5>
-      <p>We provide state-of-the-art medical facilities equipped with the latest medical devices and technology to ensure the best treatment for our patients.</p>
-    </div>
-  </div>
 
 </div>
+
 <script src="/js/slideshow.js"></script>
-<div class="lowerBox" style="padding-top: 4%; color: white; padding-left: 10%; padding-bottom: 4%">
-  Book an Appointment
-  <a href="/appointments/new">
-    <button class="button button4" style="padding-top: 2%; color: white; margin-left: 40%; font-family: Times New Roman, sans-serif; font-size: 20px">
-      Schedule now
-    </button>
-  </a>
+<div class="lowerBox" style="padding-top: 2%; color: white; padding-left: 10%; padding-bottom: 2%">
+    Book an Appointment
+    <a th:href="@{/personal_information}">
+        <button class="button button4"
+                style="padding-top: 2%; color: white; margin-left: 40%; font-family: Times New Roman, sans-serif; font-size: 20px">
+            Schedule now
+        </button>
+    </a>
 </div>
+<div class="container" style="margin-left: 24%;">
+    <div id="doctors-paragraph">
+        <h2 style="font-family: Georgia, serif; font-weight: bolder; font-size: 30px;">Healing starts here</h2>
+        <h3 style="font-family: Georgia, serif; font-weight: bolder; font-size: 22px;">The right answers the first
+            time</h3>
+        <p>Effective treatment depends on getting the right diagnosis. Our experts diagnose and treat the toughest
+            medical
+            challenges.</p>
+        <a th:href="@{/doctors_index2}"
+           style="display: inline-block; padding: 10px 20px; border-radius: 30px; border: 2px solid #007bff; color: #007bff; text-decoration: none; text-align: center;">Meet
+            The Doctors</a>
 
-<div class="w3-row-padding" style="margin-left: 22%; margin-top: 4%;">
-  <div class="w3-col s12 m6 l4" style="margin-bottom: 20px;">
-    <div class="w3-card-4" style="width:80%">
-      <img src="https://media.istockphoto.com/id/1330046035/ro/fotografie/portretul-cu-capul-al-medicului-z%C3%A2mbitor-din-spital.jpg?s=612x612&w=0&k=20&c=CFCgAtIyYyXMTh10kLOv7cba5Ow7MSnFoXVHc0k2GV8=" alt="Alps" style="width:100%">
-      <div class="w3-container w3-center">
-        <p>Dr. Sophia Rodriguez - Chief of Obstetrics</p>
-      </div>
     </div>
-  </div>
-
-  <div class="w3-col s12 m6 l4" style="margin-bottom: 20px;">
-    <div class="w3-card-4" style="width:80%">
-      <img src="https://media.istockphoto.com/id/1311511363/ro/fotografie/portretul-cu-capul-al-medicului-de-sex-masculin-z%C3%A2mbitor-cu-tablet%C4%83.jpg?s=612x612&w=0&k=20&c=vEO6A3uc7jjgPwvAKpAMI350mUzu3NkqxMQCIvHBVNI=" alt="Alps" style="width:100%">
-      <div class="w3-container w3-center">
-        <p>Dr. Benjamin Turner - Chief of Emergency Medicine</p>
-      </div>
+    <script src="/js/viewport_paragraph_doctors.js"></script>
+    <div class="card">
+        <img src="https://www.royalhospital.ro/wp-content/uploads/2022/06/echipa1.jpg" alt="Avatar" style="width:100%">
     </div>
-  </div>
-
-  <div class="w3-col s12 m6 l4" style="margin-bottom: 20px;">
-    <div class="w3-card-4" style="width:80%">
-      <img src="https://media.istockphoto.com/id/1329569957/ro/fotografie/fericit%C4%83-t%C3%A2n%C4%83r%C4%83-doctor-de-sex-feminin-uita-la-aparatul-de-fotografiat.jpg?s=612x612&w=0&k=20&c=3ikYI9DmLkJbhbpgvUsAqHacc_GKRl34r0gGIJYh6DI=" alt="Alps" style="width:100%">
-      <div class="w3-container w3-center">
-        <p>Dr. Olivia Bennett - Head of Cardiology</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="w3-col s12 m6 l4" style="margin-bottom: 20px;">
-    <div class="w3-card-4" style="width:80%">
-      <img src="https://media.istockphoto.com/id/1308951063/ro/fotografie/portretul-cu-capul-al-medicului-masculin-caucazian-matur-%C3%AEn-uniform%C4%83.jpg?s=612x612&w=0&k=20&c=uaB1KMZR9iM_eTbiMRnQBde76B_X4GcV_rib6Ht8lOM=" alt="Alps" style="width:100%">
-      <div class="w3-container w3-center">
-        <p>Dr. Marcus Davis - Director of Oncology</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="w3-col s12 m6 l4" style="margin-bottom: 20px;">
-    <div class="w3-card-4" style="width:80%">
-      <img src="https://media.istockphoto.com/id/1368636260/ro/fotografie/cap-%C3%AEmpu%C8%99cat-vis%C4%83tor-z%C3%A2mbitor-indian-medic-de-sex-feminin-caut%C4%83-%C3%AEn-distan%C8%9B%C4%83.jpg?s=612x612&w=0&k=20&c=B_PVFDSCb2AYw2USIVzCTGYnw3lZ_IfO9b5PWIVZpUg=" alt="Alps" style="width:100%">
-      <div class="w3-container w3-center">
-        <p>Dr. Victoria Harper - Chief of Surgery</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="w3-col s12 m6 l4" style="margin-bottom: 20px;">
-    <div class="w3-card-4" style="width:80%">
-      <img src="https://media.istockphoto.com/id/1583407515/ro/fotografie/fericit%C4%83-pozitiv%C4%83-femeie-matur%C4%83-%C3%AEn-uniform%C4%83-alb%C4%83-%C3%AEmpu%C8%99cat%C4%83-%C3%AEn-cap.jpg?s=612x612&w=0&k=20&c=UiOADqsGsXlABgLUyIhzcu1YV6wYap21foQ82Ynn-90=" alt="Alps" style="width:100%">
-      <div class="w3-container w3-center">
-        <p>Dr. Emily Halpert - Director of Neurology</p>
-      </div>
-    </div>
-  </div>
 </div>
+<div class="container" style="margin-left: 24%;">
+    <div class="card2">
+        <img src="https://media.istockphoto.com/id/892701422/photo/heart-shape-with-doctor.jpg?s=612x612&w=0&k=20&c=dlcwRDbVlqdqaKpHmoFRE2FUUyFvEDsPtHGFtLja3W8="
+             alt="Avatar" style="width:100%">
+    </div>
 
+    <div id="facilities-paragraph" style="float: left;">
+        <h2 style="font-family: Georgia, serif; font-weight: bolder; font-size: 30px;">Explore Our Facilities</h2>
+        <h3 style="font-family: Georgia, serif; font-weight: bolder; font-size: 22px;">Modern Infrastructure for
+            Comprehensive Care</h3>
+        <p>Our state-of-the-art facilities are equipped with the latest medical technology to provide comprehensive care
+            to
+            our patients.</p>
+        <a th:href="@{/facilities_index2}"
+           style="display: inline-block; padding: 10px 20px; border-radius: 30px; border: 2px solid #007bff; color: #007bff; text-decoration: none; text-align: center;">View
+            Facilities</a>
+    </div>
+    <script src="/js/viewport_paragraph_facilities.js"></script>
+</div>
+<div class="container" style="margin-left: 24%;">
+    <div id="departments-paragraph">
+        <h2 style="font-family: Georgia, serif; font-weight: bolder; font-size: 30px;">Explore Our Departments</h2>
+        <h3 style="font-family: Georgia, serif; font-weight: bolder; font-size: 22px;">Comprehensive Healthcare
+            Services</h3>
+        <p>At Seattle Grace Hospital, we offer a wide range of specialized departments, each dedicated to providing
+            exceptional care in their respective fields. Our expert teams collaborate to ensure that patients receive
+            comprehensive and personalized treatment.</p>
+        <a th:href="@{/departments_index2}"
+           style="display: inline-block; padding: 10px 20px; border-radius: 30px; border: 2px solid #007bff; color: #007bff; text-decoration: none; text-align: center;">Explore
+            Departments</a>
+    </div>
 
+    <script src="/js/viewport_paragraph_departments.js"></script>
+    <div class="card3">
+        <img src="https://media.premiumtimesng.com/wp-content/files/2020/12/Medical-Devices-1024x684-1.jpeg"
+             alt="Avatar" style="width:100%">
+    </div>
+
+</div>
+<div style="width: 40%;"><p>Contact</p></div>
 </body>
 </html>

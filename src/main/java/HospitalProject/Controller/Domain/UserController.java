@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -18,7 +19,7 @@ import java.util.Optional;
 @Controller
 public class UserController {
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @GetMapping("/login")
     public String showLoginForm() {
@@ -29,7 +30,7 @@ public class UserController {
     public String login(@RequestParam("username") String username,
                         @RequestParam("password") String password,
                         Model model) {
-        Optional<User> userOptional = userRepository.findByUsername(username);
+        Optional<User> userOptional = userService.findByUsername(username);
         if (userOptional.isPresent()) {
             User user = userOptional.get();
             // Check if the password matches
@@ -45,6 +46,7 @@ public class UserController {
         model.addAttribute("error", "Invalid username or password");
         return "login"; // Show login form with error message
     }
+
     @GetMapping("/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response) {
         // Invalidate session to log out the user
@@ -58,6 +60,23 @@ public class UserController {
         response.setHeader("Expires", "0"); // Proxies.
 
         return "redirect:/"; // Redirect to the index page after logout
+    }
+
+    @GetMapping("/sign_up")
+    public String signUp(Model model) {
+        model.addAttribute("user", new User());
+        return "sign_up";
+    }
+
+    @PostMapping("/sign_up/save")
+    public String saveNewUser(User user) {
+        user.setAddress("");
+        user.setContact("");
+        user.setBirthDate(LocalDateTime.now());
+        user.setRole("user");
+        if (userService.save(user)) {
+            return "login";
+        } else return "sign_up";
     }
 
 }

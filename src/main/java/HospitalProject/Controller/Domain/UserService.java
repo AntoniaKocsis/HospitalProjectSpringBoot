@@ -14,6 +14,11 @@ public class UserService {
 
     public boolean save(User user) {
         List<User> userList = (List<User>) repository.findAll();
+        List<String> userNames = new ArrayList<>();
+        userList.stream().map(User::getUsername).forEach(userNames::add);
+        if (userNames.contains(user.getUsername())) {
+            return false;
+        }
         List<String> emails = new ArrayList<>();
         userList.stream().map(User::getEmail).forEach(emails::add);
         if (emails.contains(user.getEmail()))
@@ -37,5 +42,9 @@ public class UserService {
         }
         repository.deleteById(id);
 
+    }
+
+    public Optional<User> findByUsername(String username) {
+        return repository.findByUsername(username);
     }
 }

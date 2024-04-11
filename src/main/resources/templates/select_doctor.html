@@ -2,135 +2,104 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Add New Doctor</title>
-    <link rel="stylesheet" type="text/css" href="/css/form_styling.css">
+    <title>Personal Information</title>
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         body {
-            background-image: url('https://wallpaper.dog/large/20499790.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+            margin: 0;
+            color: #6a6f8c;
+            background: rgb(4, 48, 77);
+            font: 600 16px/18px 'Open Sans', sans-serif;
+            font-family: 'Open Sans', sans-serif;
         }
 
-        /* Overlay */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
+        *, :after, :before {
+            box-sizing: border-box
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .login-container {
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black color */
-            z-index: 1; /* Ensure the overlay is above other content */
-        }
+            margin: auto;
+            max-width: 525px;
+            min-height: 670px;
+            position: relative;
+            background: url(https://healthcaredesignmagazine.com/wp-content/uploads/2022/10/02-scaled.jpg) no-repeat center;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+            display: flex;
+            background-size: cover;
 
-
-        .main {
-            max-width: 900px;
-            margin: 50px auto;
-            background-color: rgba(24, 55, 75, 0.7);
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
         }
 
         .form-container {
-            padding: 40px;
-            border-radius: 10px;
-            background-color: #f8f9fa;
-            font-family: 'Open Sans', sans-serif;
-
+            width: 100%;
+            padding: 100px 70px 50px 70px;
+            background: rgba(40, 57, 101, .9);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Style for form labels */
-        label {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
 
-        /* Style for input fields */
-        /* Style for input fields */
-        input,
-        select {
-            font-family: 'Open Sans', sans-serif;
-            width: calc(100% - 20px);
-            padding: 10px;
+       select {
+           margin-left: 2%;
+            width: 100%;
+            padding: 15px;
             margin-bottom: 20px;
-            border: 1px solid rgb(132, 163, 225);
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 20px;
-            outline: none; /* Remove default focus outline */
-        }
-
-        .button-primary {
-            background-color: rgba(58, 121, 162, 0.6);
-            color: #fff;
-            padding: 12px 24px;
             border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        .button-primary:hover {
-            background-color: #234157;
-            color: white;
-        }
-
-        .button-secondary {
-            background-color: #6c757d;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, .1);
             color: #fff;
-            padding: 12px 24px;
+        }
+        /* Add this CSS to style the dropdown options */
+        select option {
+            padding: 12px 20px; /* Increase padding */
+            font-size: 16px; /* Increase font size */
+            background: rgba(40, 57, 101, .9); /* Background color */
+            color: #fff; /* Text color */
+        }
+
+        select option:hover {
+            background: #3e708f; /* Hover background color */
+        }
+
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 15px;
             border: none;
-            border-radius: 4px;
+            border-radius: 25px;
+            background: #3e708f;
+            color: #fff;
+            font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-family: 'Open Sans', sans-serif;
         }
 
-        .button-secondary:hover {
-            background-color: #495057;
-            color: white;
-        }
-
-        /* Center the buttons */
-        .text-center {
-            text-align: center;
+        button[type="submit"]:hover {
+            background: #103f60;
+            color: #fff;
         }
     </style>
-
 </head>
+
 <body>
-<div class="overlay"></div>
-<div class="main" style="margin-top: 10%">
-    <form class="form-container" th:action="@{/confirm_appointment}" method="get"
-          style="max-width: 70%; margin: 5% auto;">
-        <div class="form-group">
-            <label for="selectedDoctor"></label>
-            <select class="form-control" id="selectedDoctor" name="selectedDoctor" required>
-                <option value="" disabled selected>Select a doctor</option>
+<div class="login-container" style="margin-top: 2%; margin-bottom: 2%;">
+    <div class="form-container">
+        <form th:action="@{/confirm_appointment}" method="get" style="margin-top: 40%;">
+            <select id="selectedDoctor" name="selectedDoctor" required>
+                <option value="" disabled selected style="text-align: center">Select a doctor</option>
                 <th:block th:each="availableDoctor : ${doctors}">
                     <option th:value="${availableDoctor.id}"
                             th:text="${availableDoctor.firstName}+' '+${availableDoctor.lastName}"></option>
                 </th:block>
             </select>
-        </div>
-
-        <div class="text-center">
-            <!-- Save and Cancel buttons -->
-            <button type="submit" class="btn button-primary m-2">Next</button>
-            <button type="button" class="btn button-secondary m-2" onclick="cancelForm()">Cancel</button>
-        </div>
-    </form>
+            <button type="submit" class="btn button-primary m-2" >Next</button>
+        </form>
+    </div>
 </div>
-<script type="text/javascript">
-    function cancelForm() {
-        window.location = "[[@{/}]]";
-    }
-</script>
 </body>
 </html>

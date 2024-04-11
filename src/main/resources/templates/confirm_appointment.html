@@ -3,154 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Appointment</title>
-    <link rel="stylesheet" type="text/css" href="/css/form_styling.css">
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         body {
-            background-image: url('https://wallpaper.dog/large/20499790.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+            margin: 0;
+            color: #6a6f8c;
+            background: rgb(4, 48, 77);
+            font: 600 16px/18px 'Open Sans', sans-serif;
+            font-family: 'Open Sans', sans-serif;
         }
 
-        /* Overlay */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
+        *, :after, :before {
+            box-sizing: border-box
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .login-container {
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black color */
-            z-index: 1; /* Ensure the overlay is above other content */
-        }
+            margin: auto;
+            max-width: 525px;
+            min-height: 670px;
+            position: relative;
+            background: url(https://healthcaredesignmagazine.com/wp-content/uploads/2022/10/02-scaled.jpg) no-repeat center;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+            display: flex;
+            background-size: cover;
 
-
-        .main {
-            max-width: 900px;
-            margin: 50px auto;
-            background-color: rgba(24, 55, 75, 0.7);
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
         }
 
         .form-container {
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #f8f9fa;
-            font-family: 'Open Sans', sans-serif;
-
+            width: 100%;
+            padding: 100px 70px 50px 70px;
+            background: rgba(40, 57, 101, .9);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Style for form labels */
         label {
+            color: #aaa;
+            font-size: 16px;
             font-weight: bold;
-            margin-bottom: 0.5rem;
+            margin-bottom: 10px;
+            display: block;
         }
 
-        /* Style for input fields */
-        /* Style for input fields */
-        input,
-        select {
-            font-family: 'Open Sans', sans-serif;
-            width: calc(100% - 20px);
-            padding: 10px;
+        input[type="text"],
+        input[type="password"], input[type="datetime-local"] {
+            width: 100%;
+            padding: 15px;
             margin-bottom: 20px;
-            border: 1px solid rgb(132, 163, 225);
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 20px;
-            outline: none; /* Remove default focus outline */
-        }
-
-        .button-primary {
-            background-color: rgba(58, 121, 162, 0.6);
-            color: #fff;
-            padding: 12px 24px;
             border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        .button-primary:hover {
-            background-color: #234157;
-            color: white;
-        }
-
-        .button-secondary {
-            background-color: #6c757d;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, .1);
             color: #fff;
-            padding: 12px 24px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 15px;
             border: none;
-            border-radius: 4px;
+            border-radius: 25px;
+            background: #3e708f;
+            color: #fff;
+            font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-family: 'Open Sans', sans-serif;
         }
 
-        .button-secondary:hover {
-            background-color: #495057;
-            color: white;
+        button[type="submit"]:hover {
+            background: #103f60;
+            color: #fff;
         }
 
-        /* Center the buttons */
-        .text-center {
-            text-align: center;
+        button[type="button"] {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            background: #3e708f;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button[type="button"]:hover {
+            background: #103f60;
+            color: #fff;
         }
     </style>
 </head>
 <body>
-<div class="overlay"></div>
-<div class="main">
-    <div class="container-fluid">
-
-        <form class="form-container" th:action="@{/confirm_appointment/save}" method="post" th:object="${appointment}"
-              style="max-width: 70%; margin: 5% auto;">
+<div class="login-container" style="margin-top: 2%; margin-bottom: 2%;">
+    <div class="form-container">
+        <form th:action="@{/confirm_appointment/save}" method="post" th:object="${appointment}">
             <input type="hidden" th:field="*{id}">
             <input type="hidden" th:field="*{patient}">
             <input type="hidden" th:field="*{doctor}">
             <input type="hidden" th:field="*{examinationRoom}">
+            <label>Full Name</label>
+            <input type="text"
+                   th:value="${appointment.patient.firstName + ' ' + appointment.patient.lastName}"
+                   readonly/>
+            <label>Doctor</label>
+            <input type="text"
+                   th:value="${appointment.doctor.firstName + ' ' + appointment.doctor.lastName}" readonly/>
+            <label>Room Number</label>
+            <input type="text"
+                   th:value="${appointment.examinationRoom.roomNumber}" readonly/>
+            <label>Date</label>
+            <input type="text"
+                   th:value="${appointment.date}" readonly/>
 
-            <!-- Patient Information -->
-            <div class="border border-secondary rounded p-3">
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Patient:</label>
-                    <div class="col-sm-8">
-                        <input type="text" style="width: 90%; height: 40px;" class="form-control" th:value="${appointment.patient.firstName + ' ' + appointment.patient.lastName}" readonly/>
-                    </div>
-                </div>
-
-
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Doctor:</label>
-                    <div class="col-sm-8">
-                        <input type="text" style="width: 90%; height: 40px;" class="form-control" th:value="${appointment.doctor.firstName + ' ' + appointment.doctor.lastName}" readonly/>
-                    </div>
-                </div>
-                <!-- Examination Room selection -->
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Examination Room:</label>
-                    <div class="col-sm-8">
-                        <input type="text" style="width: 90%; height: 40px;" class="form-control" th:value="${appointment.examinationRoom.roomNumber}" readonly/>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Date:</label>
-                    <div class="col-sm-8">
-                        <input type="text" style="width: 90%; height: 40px;" class="form-control" th:value="${appointment.date}" readonly/>
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <button type="submit" class="btn button-primary m-2">Confirm</button>
-                    <button type="button" class="btn button-secondary m-2" onclick="cancelForm()">Cancel</button>
-                </div>
-            </div>
+            <button type="submit" class="btn button-primary m-2">Confirm</button>
+            <button type="button" class="btn button-secondary m-2" onclick="cancelForm()">Cancel</button>
         </form>
     </div>
 </div>
