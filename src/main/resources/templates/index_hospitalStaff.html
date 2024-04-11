@@ -2,16 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Hospital Management System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seattle Grace Hospital</title>
     <link rel="stylesheet" type="text/css" href="/css/index_hospitalStaff.css">
     <link rel="stylesheet" type="text/css" href="/css/sidenav_styling.css">
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 </head>
-<body style="background-color: rgb(35,65,87);">
-
+<body>
 <div class="sidenav">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU"
          alt="Profile Image">
@@ -28,54 +27,202 @@
     <a th:href="@{/patients}">Patients</a>
     <a th:href="@{/prescriptions}">Prescriptions</a>
 </div>
+<div class="container" style="margin-left: 24%;">
+    <div id="doctors-paragraph">
+        <h2 style="font-family: Georgia, serif; font-weight: bolder; font-size: 30px;">Our Dedicated Medical Team</h2>
+        <h3 style="font-family: Georgia, serif; font-weight: bolder; font-size: 22px;">Delivering Expert Care Every
+            Time</h3>
+        <p>Providing effective treatment starts with accurate diagnosis. Our experienced medical team specializes in
+            diagnosing and treating even the most challenging medical conditions.</p>
+        <a th:href="@{/doctors}"
+           style="display: inline-block; padding: 10px 20px; border-radius: 30px; border: 2px solid #007bff; color: #007bff; text-decoration: none; text-align: center;">Manage
+            Doctors</a>
+    </div>
+    <div class="card">
+        <img src="https://www.royalhospital.ro/wp-content/uploads/2022/06/echipa1.jpg" alt="Avatar" style="width:100%">
+    </div>
+</div>
+<div class="container" style="margin-left: 24%;">
+    <div class="card2">
+        <img src="https://www.healthworkscollective.com/wp-content/uploads/2021/03/doctor-appointment.jpg"
+             alt="Avatar" style="width:100%">
+    </div>
 
-<div class="box">
-    <h5><a th:href="@{/appointments}"  style="color: white; text-decoration: none;">Appointments</a></h5>
-    <p>Manage appointments for patients.</p>
+    <div id="appointments-paragraph" style="float: left;">
+        <h2 style="font-family: Georgia, serif; font-weight: bolder; font-size: 30px;">Appointment Management</h2>
+        <h3 style="font-family: Georgia, serif; font-weight: bolder; font-size: 22px;">Efficient Scheduling for
+            Patients</h3>
+        <p>Our appointment management system ensures efficient scheduling and organization of appointments for our
+            patients, maximizing their convenience and minimizing waiting times.</p>
+        <a th:href="@{/appointments}"
+           style="display: inline-block; padding: 10px 20px; border-radius: 30px; border: 2px solid #007bff; color: #007bff; text-decoration: none; text-align: center;">Manage
+            Appointments</a>
+    </div>
+    <script src="/js/viewport_paragraph_appointments.js"></script>
 </div>
-<div class="box2">
-    <h5><a th:href="@{/admissions}" style="color: white; text-decoration: none;">Admissions</a></h5>
-    <p>Handle admissions of new patients.</p>
+<div class="container" style="margin-left: 24%;">
+    <div id="patients-paragraph" style="margin-top: 13%;">
+        <h2 style="font-family: Georgia, serif; font-weight: bolder; font-size: 30px;">Patient Management</h2>
+        <h3 style="font-family: Georgia, serif; font-weight: bolder; font-size: 22px;">Ensuring Comprehensive Healthcare Services</h3>
+        <p>At Seattle Grace Hospital, we prioritize the well-being of our patients. Our patient management system ensures that every aspect of their care is carefully coordinated and personalized. From admission to discharge, we strive to provide exceptional healthcare services tailored to their individual needs.</p>
+        <a th:href="@{/patients}"
+           style="display: inline-block; padding: 10px 20px; border-radius: 30px; border: 2px solid #007bff; color: #007bff; text-decoration: none; text-align: center;">
+            Manage Patients</a>
+    </div>
+    <script src="/js/viewport_paragraph_patients.js"></script>
+    <div class="card3">
+        <img src="https://ehnheart.org/wp-content/uploads/2023/09/patients.jpg"
+             alt="Avatar" style="width:100%">
+    </div>
+
 </div>
-<div class="box3">
-    <h5><a th:href="@{/doctors}" style="color: white; text-decoration: none;">Doctors</a></h5>
-    <p>View and manage doctors information.</p>
+<div class="container" style="margin-left: 24%;">
+    <div class="card2">
+        <img src="https://media.istockphoto.com/id/892701422/photo/heart-shape-with-doctor.jpg?s=612x612&w=0&k=20&c=dlcwRDbVlqdqaKpHmoFRE2FUUyFvEDsPtHGFtLja3W8="
+             alt="Avatar" style="width:100%">
+    </div>
+
+    <div id="admissions-paragraph" style="float: left;">
+        <h2 style="font-family: Georgia, serif; font-weight: bolder; font-size: 30px;">Admissions Management</h2>
+        <h3 style="font-family: Georgia, serif; font-weight: bolder; font-size: 22px;">Efficient Patient Admission
+            Process</h3>
+        <p>Our admissions management system ensures an efficient and streamlined process for admitting patients to our
+            hospital. From registration to room allocation, we prioritize patient comfort and care.</p>
+        <a th:href="@{/admissions}"
+           style="display: inline-block; padding: 10px 20px; border-radius: 30px; border: 2px solid #007bff; color: #007bff; text-decoration: none; text-align: center;">Manage
+            Admissions</a>
+    </div>
+
+    <script src="/js/viewport_paragraph_admissions.js"></script>
 </div>
 
-<div class="box" style="top: 40%;">
-    <h5><a th:href="@{/departments}"  style="color: white; text-decoration: none;">Departments</a></h5>
-    <p>Explore hospital departments.</p>
+<div class="container" style="margin-left: 24%;">
+    <div id="prescriptions-paragraph" style="float: left;">
+        <h2 style="font-family: Georgia, serif; font-weight: bolder; font-size: 30px;">Prescription Management</h2>
+        <h3 style="font-family: Georgia, serif; font-weight: bolder; font-size: 22px;">Ensuring Safe and Effective
+            Treatment</h3>
+        <p>Our prescription management system is designed to ensure the safety and effectiveness of treatments for our
+            patients.</p>
+        <a th:href="@{/prescriptions}"
+           style="display: inline-block; padding: 10px 20px; border-radius: 30px; border: 2px solid #007bff; color: #007bff; text-decoration: none; text-align: center;">Manage
+            Prescriptions</a>
+    </div>
+    <div class="card3">
+        <img src="https://rxv-corpsite-production.s3.amazonaws.com/2021/01/Doctor-education.jpeg"
+             alt="Avatar" style="width:100%">
+    </div>
+    <script src="/js/viewport_paragraph_prescriptions.js"></script>
 </div>
-<div class="box2" style="top: 40%; left: 41%;">
-    <h5><a th:href="@{/emergencyRoom}" style="color: white; text-decoration: none;">Emergency Room</a></h5>
-    <p>Access emergency room details.</p>
+<div class="container" style="margin-left: 24%;">
+    <div class="card2">
+        <img src="https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/08/medication_-diverticulitis_GettyImages186846700_Header-1024x575.jpg?w=1155&h=1528"
+             alt="Avatar" style="width:100%">
+    </div>
+
+    <div id="medications-paragraph" style="float: left;">
+        <h2 style="font-family: Georgia, serif; font-weight: bolder; font-size: 30px;">Medication Management</h2>
+        <h3 style="font-family: Georgia, serif; font-weight: bolder; font-size: 22px;">Ensuring Patient Safety and
+            Effectiveness</h3>
+        <p>Our medication management system is designed to ensure the safety and effectiveness of treatments for our
+            patients.</p>
+        <a th:href="@{/medications}"
+           style="display: inline-block; padding: 10px 20px; border-radius: 30px; border: 2px solid #007bff; color: #007bff; text-decoration: none; text-align: center;">Manage
+            Medications</a>
+    </div>
+    <script src="/js/viewport_paragraph_medications.js"></script>
 </div>
-<div class="box3" style="top: 40%; left: 70%;">
-    <h5><a th:href="@{/hospitalRooms}" style="color: white; text-decoration: none;">Hospital Rooms</a></h5>
-    <p>View hospital room information.</p>
+<div class="container" style="margin-left: 24%;">
+    <div id="lab-test-result-paragraph" style="float: left;">
+        <h2 style="font-family: Georgia, serif; font-weight: bolder; font-size: 30px;">Lab Test Results Management</h2>
+        <h3 style="font-family: Georgia, serif; font-weight: bolder; font-size: 22px;">Efficient Organization and
+            Access</h3>
+        <p>Our lab test results management system ensures efficient organization and easy access to patients' test
+            results, facilitating quick decision-making and treatment planning.</p>
+        <a th:href="@{/labTestResults}"
+           style="display: inline-block; padding: 10px 20px; border-radius: 30px; border: 2px solid #007bff; color: #007bff; text-decoration: none; text-align: center;">Manage
+            Lab Test Results</a>
+    </div>
+    <script src="/js/viewport_paragraph_labTestResult.js"></script>
+    <div class="card3">
+        <img src="https://purelifepharmacy.ng/wp-content/uploads/2022/10/hand-with-protective-gloves-holding-blood-samples-covid-test-1024x683.jpg"
+             alt="Avatar" style="width:100%">
+    </div>
+
 </div>
 
-<div class="box" style="top: 80%;">
-    <h5><a th:href="@{/hospitalBillingSystems}"  style="color: white; text-decoration: none;">Hospital Billing System</a></h5>
-    <p>Manage hospital billing systems.</p>
-</div>
-<div class="box2" style="top: 80%; left: 41%;">
-    <h5><a th:href="@{/labTestResults}" style="color: white; text-decoration: none;">Lab Test Results</a></h5>
-    <p>Access lab test results.</p>
-</div>
-<div class="box3" style="top: 80%; left: 70%;">
-    <h5><a th:href="@{/medications}" style="color: white; text-decoration: none;">Medications</a></h5>
-    <p>Manage hospital medications.</p>
+
+<div class="container" style="margin-left: 24%;">
+    <div class="card2">
+        <img src="https://www.karexpert.com/wp-content/uploads/2022/04/17.png"
+             alt="Avatar" style="width:100%">
+    </div>
+
+    <div id="billing-system-paragraph" style="float: left; margin-top: 13%;">
+        <h2 style="font-family: Georgia, serif; font-weight: bolder; font-size: 30px;">Billing System Management</h2>
+        <h3 style="font-family: Georgia, serif; font-weight: bolder; font-size: 22px;">Efficient Billing Processes for Patients</h3>
+        <p>Our billing system management ensures efficient and accurate billing processes for our patients. From invoicing to payment tracking, we strive to provide transparent and hassle-free billing experiences.</p>
+        <a th:href="@{/hospitalBillingSystem}"
+           style="display: inline-block; padding: 10px 20px; border-radius: 30px; border: 2px solid #007bff; color: #007bff; text-decoration: none; text-align: center;">Manage
+            Billing System</a>
+    </div>
+    <script src="/js/viewport_paragraph_billingSystem.js"></script>
 </div>
 
-<div class="box" style="top: 120%;">
-    <h5><a th:href="@{/patients}"  style="color: white; text-decoration: none;">Patients</a></h5>
-    <p>View and manage patient records.</p>
-</div>
-<div class="box2" style="top: 120%; left: 41%;">
-    <h5><a th:href="@{/prescriptions}" style="color: white; text-decoration: none;">Prescriptions</a></h5>
-    <p>Manage patient prescriptions.</p>
-</div>
+<div class="container" style="margin-left: 24%;">
+    <div id="departments-paragraph">
+        <h2 style="font-family: Georgia, serif; font-weight: bolder; font-size: 30px;">Explore Our Departments</h2>
+        <h3 style="font-family: Georgia, serif; font-weight: bolder; font-size: 22px;">Comprehensive Healthcare
+            Services</h3>
+        <p>At Seattle Grace Hospital, we offer a wide range of specialized departments, each dedicated to providing
+            exceptional care in their respective fields. Our expert teams collaborate to ensure that patients receive
+            comprehensive and personalized treatment.</p>
+        <a th:href="@{/departments}"
+           style="display: inline-block; padding: 10px 20px; border-radius: 30px; border: 2px solid #007bff; color: #007bff; text-decoration: none; text-align: center;">
+            Manage Departments</a>
+    </div>
 
+    <script src="/js/viewport_paragraph_departments.js"></script>
+    <div class="card3">
+        <img src="https://media.premiumtimesng.com/wp-content/files/2020/12/Medical-Devices-1024x684-1.jpeg"
+             alt="Avatar" style="width:100%">
+    </div>
+
+</div>
+<div class="container" style="margin-left: 24%;">
+    <div class="card2" style="width: 620px;">
+        <img src="https://img.freepik.com/free-photo/clean-empty-hospital-ward-ready-receive-patients-reflecting-modern-medical-care_91128-4608.jpg?w=1380&t=st=1712306863~exp=1712307463~hmac=d0cf226eb1984e3decaa732ade0adaed15db4371ffac3ec156138ea7d99bd394"
+             alt="Avatar" style="width:100%">
+    </div>
+    <div id="emergency-room-paragraph" style="float: left; margin-top: 12%;">
+        <h2 style="font-family: Georgia, serif; font-weight: bolder; font-size: 30px;">Emergency Room Management</h2>
+        <h3 style="font-family: Georgia, serif; font-weight: bolder; font-size: 22px;">Rapid and Effective Emergency Care</h3>
+        <p>Our emergency room management ensures rapid and effective care for patients in critical situations. From triage to treatment, our dedicated team is equipped to handle emergencies with precision and compassion, prioritizing patient outcomes.</p>
+        <a th:href="@{/emergencyRoom}"
+           style="display: inline-block; padding: 10px 20px; border-radius: 30px; border: 2px solid #007bff; color: #007bff; text-decoration: none; text-align: center;">Manage
+            Emergency Room</a>
+    </div>
+
+
+    <script src="/js/viewport_paragraph_emergencyRoom.js"></script>
+</div>
+<div class="container" style="margin-left: 24%;">
+    <div id="hospital-rooms-paragraph" style="margin-top: 13%;">
+        <h2 style="font-family: Georgia, serif; font-weight: bolder; font-size: 30px;">Hospital Rooms Management</h2>
+        <h3 style="font-family: Georgia, serif; font-weight: bolder; font-size: 22px;">Ensuring Comfortable Patient Accommodations</h3>
+        <p>At Seattle Grace Hospital, we prioritize patient comfort and well-being. Our hospital rooms management ensures that patients are accommodated in comfortable and conducive environments for their recovery. From cleanliness to amenities, we strive to provide a comforting atmosphere for our patients.</p>
+        <a th:href="@{/hospitalRooms}"
+           style="display: inline-block; padding: 10px 20px; border-radius: 30px; border: 2px solid #007bff; color: #007bff; text-decoration: none; text-align: center;">
+            Manage Hospital Rooms</a>
+    </div>
+
+
+    <script src="/js/viewport_paragraph_hospitalRoom.js"></script>
+    <div class="card3">
+        <img src="https://media.istockphoto.com/id/1282880747/photo/digitally-rendered-image-of-an-empty-hospital-intensive-care-unit.jpg?s=612x612&w=0&k=20&c=cPNnzfgfOvcVMxaj-gWzHnbVLvJT5G3LNIWTKXU7tXg="
+             alt="Avatar" style="width:100%">
+    </div>
+
+</div>
+<div style="width: 40%;"><p>Contact</p></div>
 </body>
 </html>
