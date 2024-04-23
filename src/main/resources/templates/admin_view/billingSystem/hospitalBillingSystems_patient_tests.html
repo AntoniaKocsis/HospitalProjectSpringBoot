@@ -2,56 +2,53 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Lab Tests Bills</title>
-    <link rel="stylesheet" type="text/css" href="/css/table_page_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seattle Grace Hospital</title>
+    <link rel="stylesheet" type="text/css" href="/css/table_styling.css">
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<body style="background-image: url('https://images.pexels.com/photos/256262/pexels-photo-256262.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')">
-<div class="sidenav">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU"
-         alt="Profile Image">
-    <a class="h4" style="margin-top: 10%" th:href="@{/index_hospitalStaff}">Home Page</a>
-    <a class="h4" th:href="@{/hospitalBillingSystems}">Test Bills</a>
-    <a class="h4" th:href="@{/hospitalBillingSystems/appointments}">Appointment Bills</a>
-    <a class="h4" th:href="@{/hospitalBillingSystems/select_patient}">Search Test Bills For Patient</a>
-    <a class="h4" th:href="@{/hospitalBillingSystems/select_patient_for_appointment}">Search Appointment Bills For
-        Patient</a>
-</div>
-<div class="main">
-    <div class="container-fluid text-center">
-        <div class="title-box">
-            <h2>Patient Lab Test Bills</h2> <!-- Add title "Doctors" -->
-        </div>
-
-        <div>
-            <table class="table table-bordered">
-                <thead class="thead-dark">
-                <tr>
-                    <th>Lab Test ID</th>
-                    <th>Test Name</th>
-                    <th>Patient ID</th>
-                    <th>Date</th>
-                    <th>Result</th>
-                    <th>Total Cost</th>
-                </tr>
-                </thead>
-                <tbody>
-                <th:block th:each="instance : ${testBills}">
-                    <tr>
-                        <td>[[${instance.key.id}]]</td>
-                        <td>[[${instance.key.testName}]]</td>
-                        <td>[[${instance.key.patient.id}]]</td>
-                        <td>[[${instance.key.date}]]</td>
-                        <td>[[${instance.key.result}]]</td>
-                        <td>[[${instance.value}]]</td>
-                    </tr>
-                </th:block>
-                </tbody>
-            </table>
-        </div>
+<body>
+<section class="et-hero-tabs">
+    <h1>PATIENT TEST BILLS</h1>
+    <h3>Management System</h3>
+    <div class="et-hero-tabs-container">
+        <a class="et-hero-tab" href="#patients-section">View Result</a>
+        <a class="et-hero-tab" th:href="@{/hospitalBillingSystems/appointments}">Appointment Bills</a>
+        <a class="et-hero-tab" th:href="@{/hospitalBillingSystems/select_patient}">Search Test Bills For Patient</a>
+        <a class="et-hero-tab" th:href="@{/hospitalBillingSystems/select_patient_for_appointment}">Search Appointment Bills For Patient</a>
+        <a class="et-hero-tab" th:href="@{/index_hospitalStaff}">Home</a>
     </div>
-</div>
+    <span class="et-hero-tab-slider"></span>
+</section>
+
+<main class="et-main">
+
+        <table class="table table-bordered" id="patients-section" style="width: 90%;margin-left: 5%;">
+            <thead class="thead-dark">
+            <tr>
+                <th>Lab Test ID</th>
+                <th>Test Name</th>
+                <th>Patient ID</th>
+                <th>Date</th>
+                <th>Result</th>
+                <th>Total Cost</th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="instance : ${testBills}">
+                <tr>
+                    <td>[[${instance.key.id}]]</td>
+                    <td>[[${instance.key.testName}]]</td>
+                    <td>[[${instance.key.patient.id}]]</td>
+                    <td>[[${instance.key.date}]]</td>
+                    <td>[[${instance.key.result}]]</td>
+                    <td>[[${instance.value}]]</td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+</main>
 </body>
 </html>

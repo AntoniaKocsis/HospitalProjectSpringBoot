@@ -1,66 +1,67 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Emergency Room</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="/css/table_page_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seattle Grace Hospital</title>
+    <link rel="stylesheet" type="text/css" href="/css/table_styling.css">
+    <link rel="stylesheet" type="text/css" href="/css/index_hospitalStaff.css">
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<title>Manage Patients</title>
-<body style="background-image: url('https://img.freepik.com/free-photo/clean-empty-hospital-ward-ready-receive-patients-reflecting-modern-medical-care_91128-4608.jpg?w=1380&t=st=1712306863~exp=1712307463~hmac=d0cf226eb1984e3decaa732ade0adaed15db4371ffac3ec156138ea7d99bd394')">
-<div class="sidenav">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU"
-         alt="Profile Image">
-    <a class="h4" style="margin-top: 10%" th:href="@{/index_hospitalStaff}">Home Page</a>
-    <a class="h4" th:href="@{/emergencyRoom/new}">Add New Patient</a>
-    <a class="h4" th:href="@{/emergencyRoom_doctors}">On Call Doctors</a>
-    <a class="h4" th:href="@{/emergencyRoom/handleNextPatient}">Handle Next Patient</a>
+<body>
+<section class="et-hero-tabs">
+    <h1>EMERGENCY ROOM</h1>
+    <h3>Management System</h3>
+    <div class="et-hero-tabs-container">
+        <a class="et-hero-tab" href="#patients-section">View Patients</a>
+        <a class="et-hero-tab" th:href="@{/emergencyRoom/new}">Add New Patient</a>
+        <a class="et-hero-tab" th:href="@{/emergencyRoom_doctors}">On Call Doctors</a>
+        <a class="et-hero-tab" th:href="@{/emergencyRoom/handleNextPatient}">Handle Next Patient</a>
+        <a class="et-hero-tab" th:href="@{/index_hospitalStaff}">Home</a>
 
-</div>
-<div class="main">
-    <div class="container-fluid text-center">
-        <div class="title-box">
-            <h2>Emergency Room</h2> <!-- Add title "Doctors" -->
-        </div>
-        <div>
-            <table class="table table-bordered">
-                <thead class="thead-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Birth Date</th>
-                    <th>Contact</th>
-                    <th>Address</th>
-                    <th>Condition</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                <th:block th:each="instance : ${waitingList}">
-                    <tr>
-                        <td>[[${instance.key.id}]]</td>
-                        <td>[[${instance.key.firstName}]]</td>
-                        <td>[[${instance.key.lastName}]]</td>
-                        <td>[[${instance.key.birthDate}]]</td>
-                        <td>[[${instance.key.contact}]]</td>
-                        <td>[[${instance.key.address}]]</td>
-                        <td>[[${instance.value}]]</td>
-                        <td>
-                            <a class="h4" style="font-size: 14px; padding: 5px 10px;"
-                               th:href="@{'/emergencyRoom/delete/' + ${instance.key.id}}">Delete</a>
-                        </td>
-                    </tr>
-                </th:block>
-
-                </tbody>
-            </table>
-
-        </div>
     </div>
-</div>
+    <span class="et-hero-tab-slider"></span>
+</section>
+
+<main class="et-main">
+    <table class="table table-bordered" id="patients-section" style="margin-left: 5%;width: 90%;">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Birth Date</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Condition</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="instance : ${waitingList}">
+            <tr>
+                <td>[[${instance.key.id}]]</td>
+                <td>[[${instance.key.firstName}]]</td>
+                <td>[[${instance.key.lastName}]]</td>
+                <td>[[${instance.key.birthDate}]]</td>
+                <td>[[${instance.key.contact}]]</td>
+                <td>[[${instance.key.address}]]</td>
+                <td>[[${instance.value}]]</td>
+                <td>
+                    <a class="h4" style="font-size: 14px; padding: 5px 10px;"
+                       th:href="@{'/emergencyRoom/delete/' + ${instance.key.id}}">Delete</a>
+                </td>
+            </tr>
+        </th:block>
+
+        </tbody>
+    </table>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/hospital_management_navbar.js"></script>
 
 </body>
 </html>

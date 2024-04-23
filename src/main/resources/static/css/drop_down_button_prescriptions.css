@@ -5,7 +5,6 @@
     font-size: 16px;
     border: none;
     display: block; /* Added to make the button full width */
-    margin-left:50%;
 }
 
 .dropdown {
@@ -35,7 +34,6 @@
 
 .dropdown:hover .dropdown-content {
     display: block;
-    margin-left: 35%;
 }
 
 .dropdown:hover .dropbtn {

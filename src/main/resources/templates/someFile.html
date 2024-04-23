@@ -1,37 +1,22 @@
-<div class="container" style="margin-left: 24%;">
-    <div id="departments-paragraph">
-        <h2 style="font-family: Georgia, serif; font-weight: bolder; font-size: 30px;">Explore Our Departments</h2>
-        <h3 style="font-family: Georgia, serif; font-weight: bolder; font-size: 22px;">Comprehensive Healthcare
-            Services</h3>
-        <p>At Seattle Grace Hospital, we offer a wide range of specialized departments, each dedicated to providing
-            exceptional care in their respective fields. Our expert teams collaborate to ensure that patients receive
-            comprehensive and personalized treatment.</p>
-        <a th:href="@{/departments}"
-           style="display: inline-block; padding: 10px 20px; border-radius: 30px; border: 2px solid #007bff; color: #007bff; text-decoration: none; text-align: center;">
-            Manage Departments</a>
+<form action="/hospitalBillingSystems/patient_tests" method="get">
+    <div class="text-center">
+        <h2 th:text="${pageTitle}">Choose Patient</h2>
     </div>
-
-    <script src="/js/viewport_paragraph_departments.js"></script>
-    <div class="card3">
-        <img src="https://media.premiumtimesng.com/wp-content/files/2020/12/Medical-Devices-1024x684-1.jpeg"
-             alt="Avatar" style="width:100%">
+    <div class="form-container" style="max-width: 65%; margin: 6% auto;">
+        <div class="border border-secondary rounded p-3">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label" for="patientId">Select Patient:</label>
+                <div class="col-sm-8">
+                    <select id="patientId" name="patientId" class="form-control" style="width: 90%; height: 40px;" required>
+                        <th:block th:each="pat:${patients}">
+                            <option th:text="${pat.id}" th:value="${pat.id}"></option>
+                        </th:block>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn button-primary m-2">Submit</button>
+        </div>
     </div>
-
-</div>
-<div class="container" style="margin-left: 24%;">
-    <div class="card2" style="width: 620px;">
-        <img src="https://img.freepik.com/free-photo/clean-empty-hospital-ward-ready-receive-patients-reflecting-modern-medical-care_91128-4608.jpg?w=1380&t=st=1712306863~exp=1712307463~hmac=d0cf226eb1984e3decaa732ade0adaed15db4371ffac3ec156138ea7d99bd394"
-             alt="Avatar" style="width:100%">
-    </div>
-    <div id="emergency-room-paragraph" style="float: left; margin-top: 12%;">
-        <h2 style="font-family: Georgia, serif; font-weight: bolder; font-size: 30px;">Emergency Room Management</h2>
-        <h3 style="font-family: Georgia, serif; font-weight: bolder; font-size: 22px;">Rapid and Effective Emergency Care</h3>
-        <p>Our emergency room management ensures rapid and effective care for patients in critical situations. From triage to treatment, our dedicated team is equipped to handle emergencies with precision and compassion, prioritizing patient outcomes.</p>
-        <a th:href="@{/emergencyRoom}"
-           style="display: inline-block; padding: 10px 20px; border-radius: 30px; border: 2px solid #007bff; color: #007bff; text-decoration: none; text-align: center;">Manage
-            Emergency Room</a>
-    </div>
-
-
-    <script src="/js/viewport_paragraph_emergencyRoom.js"></script>
-</div>
+</form>

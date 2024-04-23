@@ -45,8 +45,8 @@
         }
 
 
-       select {
-           margin-left: 2%;
+        select {
+            margin-left: 2%;
             width: 100%;
             padding: 15px;
             margin-bottom: 20px;
@@ -55,9 +55,10 @@
             background: rgba(255, 255, 255, .1);
             color: #fff;
         }
+
         /* Add this CSS to style the dropdown options */
         select option {
-            padding: 12px 20px; /* Increase padding */
+            padding: 22px 20px; /* Increase padding */
             font-size: 16px; /* Increase font size */
             background: rgba(40, 57, 101, .9); /* Background color */
             color: #fff; /* Text color */
@@ -92,10 +93,9 @@
         <form th:action="@{/confirm_appointment}" method="get" style="margin-top: 40%;">
             <select id="selectedDoctor" name="selectedDoctor" required>
                 <option value="" disabled selected style="text-align: center">Select a doctor</option>
-                <th:block th:each="availableDoctor : ${doctors}">
-                    <option th:value="${availableDoctor.id}"
-                            th:text="${availableDoctor.firstName}+' '+${availableDoctor.lastName}"></option>
-                </th:block>
+                <!-- Use Thymeleaf directly to generate options -->
+                <option th:each="availableDoctor : ${doctors}" th:value="${availableDoctor.id}"
+                        th:text="${availableDoctor.firstName}+' '+${availableDoctor.lastName}"></option>
             </select>
             <button type="submit" class="btn button-primary m-2" >Next</button>
         </form>

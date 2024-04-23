@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-
     <meta charset="UTF-8">
-    <title>Manage Lab Test Results</title>
-    <link rel="stylesheet" type="text/css" href="/css/table_page_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seattle Grace Hospital</title>
+    <link rel="stylesheet" type="text/css" href="/css/table_styling.css">
+    <link rel="stylesheet" type="text/css" href="/css/index_hospitalStaff.css">
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<body style="background-image: url('https://images.pexels.com/photos/256262/pexels-photo-256262.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')">
-<div class="sidenav">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU" alt="Profile Image">
-    <a class="h4" style="margin-top: 10%;" th:href="@{/index_hospitalStaff}">Home Page</a>
-    <a class="h4" th:href="@{/labTestResults/new}">Add New Lab Test Result</a>
-</div>
-<div class="main">
-    <div class="container-fluid text-center">
-        <div class="title-box">
-            <h2>Lab Test Results</h2> <!-- Add title "Doctors" -->
-        </div>
-        <div>
-            <table class="table table-bordered">
-                <thead class="thead-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>Test Name</th>
-                    <th>Patient ID</th>
-                    <th>Date</th>
-                    <th>Result</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                <th:block th:each="labTestResult : ${listLabTestResults}">
-                    <tr>
-                        <td>[[${labTestResult.id}]]</td>
-                        <td>[[${labTestResult.testName}]]</td>
-                        <td>[[${labTestResult.patient.id}]]</td>
-                        <td>[[${labTestResult.date}]]</td>
-                        <td>[[${labTestResult.result}]]</td>
-                        <td>
-                            <a class="h4" th:href="@{'/labTestResults/delete/' + ${labTestResult.id}}">Delete</a>
-                        </td>
-                    </tr>
-                </th:block>
-
-                </tbody>
-            </table>
-
-        </div>
+<body>
+<section class="et-hero-tabs">
+    <h1>LAB TEST MANAGEMENT</h1>
+    <h3>Management System</h3>
+    <div class="et-hero-tabs-container">
+        <a class="et-hero-tab" href="#patients-section">View Lab Test Results</a>
+        <a class="et-hero-tab" th:href="@{/labTestResults/new}">Add New Lab Test</a>
+        <a class="et-hero-tab" th:href="@{/index_hospitalStaff}">Home</a>
     </div>
-</div>
+    <span class="et-hero-tab-slider"></span>
+</section>
 
+<main class="et-main">
+    <table class="table table-bordered" id="patients-section" style="margin-left: 5%;width: 90%;">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Test Name</th>
+            <th>Patient ID</th>
+            <th>Date</th>
+            <th>Result</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="labTestResult : ${listLabTestResults}">
+            <tr>
+                <td>[[${labTestResult.id}]]</td>
+                <td>[[${labTestResult.testName}]]</td>
+                <td>[[${labTestResult.patient.id}]]</td>
+                <td>[[${labTestResult.date}]]</td>
+                <td>[[${labTestResult.result}]]</td>
+                <td>
+                    <a class="h4" th:href="@{'/labTestResults/delete/' + ${labTestResult.id}}">Delete</a>
+                </td>
+            </tr>
+        </th:block>
+
+        </tbody>
+    </table>
+</main>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/hospital_management_navbar.js"></script>
 </body>
 </html>

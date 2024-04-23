@@ -2,62 +2,55 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Filtered Medications</title>
-    <link rel="stylesheet" type="text/css" href="/css/table_page_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seattle Grace Hospital</title>
+    <link rel="stylesheet" type="text/css" href="/css/table_styling.css">
+    <link rel="stylesheet" type="text/css" href="/css/index_hospitalStaff.css">
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<body style="background-image: url('https://th.bing.com/th/id/R.f74458062bff2bfc64da0e25be70e8d5?rik=UtlIRYZKDKgOgw&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2fe%2ff%2f7%2f7182.jpg&ehk=4EnNR1LQ6WDExBsW%2fZzOEgcrQ%2fc6CtT2DwuAMm6u7MY%3d&risl=&pid=ImgRaw&r=0');
-           ">
-<div class="sidenav">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU"
-         alt="Profile Image">
-    <a class="h4" th:href="@{/index_hospitalStaff}" style="margin-top: 10%;">Home Page</a>
-    <a class="h4" th:href="@{/medications}">Manage Medications</a>
-    <a class="h4" th:href="@{/medications/new}">Add New Medication</a>
-    <a class="h4" th:href="@{/medications/filtered_search}">Filtered Search</a>
-</div>
-
-<div class="main">
-    <div class="container-fluid text-center">
-        <div class="title-box">
-            <h2>Filtered Medications</h2> <!-- Add title "Doctors" -->
-        </div>
-
-        <div th:if="${message}" class="alert alert-success text-center">
-            [[${message}]]
-        </div>
-
-        <div>
-            <table class="table table-bordered">
-                <thead class="thead-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Concentration</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                <th:block th:each="medication : ${listMedications}">
-                    <tr>
-                        <td>[[${medication.id}]]</td>
-                        <td>[[${medication.name}]]</td>
-                        <td>[[${medication.concentration}]]</td>
-                        <td>
-                            <a class="h4 mr-3" th:href="@{'/medications/edit/' + ${medication.id}}">Edit</a>
-                            <a class="h4" th:href="@{'/medications/delete/' + ${medication.id}}">Delete</a>
-                        </td>
-                    </tr>
-                </th:block>
-
-                </tbody>
-            </table>
-
-        </div>
+<body>
+<section class="et-hero-tabs">
+    <h1>FILTERED SEARCH MEDICATIONS</h1>
+    <h3>Management System</h3>
+    <div class="et-hero-tabs-container">
+        <a class="et-hero-tab" href="#medications-section">View Medications</a>
+        <a class="et-hero-tab" th:href="@{/medications/new}">Add New Medication</a>
+        <a class="et-hero-tab" th:href="@{/medications/filtered_search}">Filtered Search</a>
+        <a class="et-hero-tab" th:href="@{/index_hospitalStaff}">Home</a>
     </div>
-</div>
+    <span class="et-hero-tab-slider"></span>
+</section>
+
+<main class="et-main">
+    <table class="table table-bordered" id="medications-section" style=" margin-left: 5%;width: 90%;">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Concentration</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="medication : ${listMedications}">
+            <tr>
+                <td>[[${medication.id}]]</td>
+                <td>[[${medication.name}]]</td>
+                <td>[[${medication.concentration}]]</td>
+                <td>
+                    <a class="h4 mr-3" th:href="@{'/medications/edit/' + ${medication.id}}">Edit</a>
+                    <a class="h4" th:href="@{'/medications/delete/' + ${medication.id}}">Delete</a>
+                </td>
+            </tr>
+        </th:block>
+
+        </tbody>
+    </table>
+</main>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/hospital_management_navbar.js"></script>
 
 </body>
 </html>
